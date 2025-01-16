@@ -17,9 +17,11 @@ api.interceptors.response.use(
       // Any status codes that falls outside the range of 2xx cause this function to trigger
       let message;
       if (error && error.response && error.response.status === 404) {
-        window.location.href = '/not-found';
+        // window.location.href = '/not-found';
+        console.log(error)
       } else if (error && error.response && error.response.status === 403) {
-        window.location.href = "/access-denied";
+        // window.location.href = "/access-denied";
+        console.log(error)
       } else {
         switch (error.response.status) {
           case 401:
