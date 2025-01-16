@@ -29,7 +29,7 @@ export const middleware = async (req)=>{
     }
     catch(err)
     {
-        return new NextResponse(JSON.stringify({success:false, message:'Please login'}))
+        return new NextResponse(JSON.stringify({success:false, message:'Please login', err:err}))
     }
 }
 
