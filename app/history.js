@@ -118,7 +118,6 @@ export const getUserHistory = async ()=>{
 export const getUserWishlist = async ()=>{
     try{
         const token = await getCookies()
-        console.log(token)
         if(!token)
         {
             return []
@@ -128,7 +127,6 @@ export const getUserWishlist = async ()=>{
             headers:{'accessToken': token},
         })
         const info = await data.json()
-        console.log(info)
         return info.data
     }
     catch(error){
