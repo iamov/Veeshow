@@ -32,7 +32,7 @@ const Category = ({params}) => {
       sort = 'primary_release_date.asc'
     }
 
-    const response = await api.get(`/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=${sort}&${type == 'movie' ?'primary_release_date.gte':'first_air_date.gte'}=${date}-01-01&${type == 'movie' ?'primary_release_date.lte':'first_air_date.lte'}=${date}-12-31&with_genres=${genre}${genre != '16'&&'&without_genres=16'}`)
+    const response = await api.get(`/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=${sort}&${type == 'movie' ?'primary_release_date.gte':'first_air_date.gte'}=${date}-01-01&${type == 'movie' ?'primary_release_date.lte':'first_air_date.lte'}=${date}-12-31&with_genres=${genre}${genre != '16'&&'&with_origin_country=US'}&${(genre == '16' && type == 'tv')&&'with_origin_country=JP'}`)
     setData(response.results)
     setPages(response.total_pages)
   }

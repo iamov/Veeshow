@@ -41,7 +41,7 @@ const Top = ({ BackgroundList }) => {
             backgroundImage: `url(${Api}${BackgroundList[currentIndex]?.backdrop_path})`,
           }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1,transition:{duration:0.2} }}
+          animate={{ opacity: 1,transition:{duration:0.3} }}
           exit={{ opacity: 0,transition:{duration:1} }}
         >
       <section className="relative z-10 flex items-center w-full h-full px-5 md:px-10 2xl:px-40">
@@ -53,7 +53,7 @@ const Top = ({ BackgroundList }) => {
             <h3>{BackgroundList[currentIndex]?.release_date}</h3>
             </div>
             
-            <div className=' md:text-lg text-center md:text-start font-medium mb-7 w-[95%] xl:w-[80%]'>
+            <div className=' md:text-lg min-h-28 text-center md:text-start font-medium mb-7 w-[95%] xl:w-[80%]'>
                 <h2>{truncateText(BackgroundList[currentIndex]?.overview, 200)}</h2>
             </div>
             <div className=' flex items-center flex-col md:flex-row '>

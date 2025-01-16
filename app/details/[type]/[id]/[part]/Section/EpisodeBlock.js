@@ -21,6 +21,10 @@ const EpisodeBlock = ({data,id, Detail}) => {
             episode:data.episode_number
           }
     
+          const addDefaultImg = ev => {
+            ev.target.src = "/imageph.png"
+         }
+
   return (
     <>
    <div className=' w-full h-full hover:scale-95 cursor-pointer transition-all duration-500 ease-in-out' onClick={()=>{
@@ -33,7 +37,7 @@ const EpisodeBlock = ({data,id, Detail}) => {
     }}>
         <section className=' flex items-center h-full w-full rounded-md overflow-hidden'>
             <div className=' w-40 rounded-md relative h-full  ' >
-              <img className=' absolute object-cover object-center w-full h-full z-10' src={`${ImageApi}${data.still_path}`} loading='lazy'/>
+              <img className=' absolute object-cover object-center w-full h-full z-10' src={`${ImageApi}${data.still_path}`} onError={addDefaultImg} loading='lazy'/>
                 <div className=' w-full h-full relative z-20 flex justify-center items-center'>
                     <div className=' w-10 h-10 flex items-center justify-center rounded-full bg-opacity-60 bg-black'>
                     <CiPlay1 className=' text-opacity-100 text-white'/>
