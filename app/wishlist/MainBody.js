@@ -40,7 +40,7 @@ const MainBody = () => {
   return (
     <div className="min-h-[100vh] relative w-full flex justify-center">
       <div
-        className=" top-10 left-10  text-4xl cursor-pointer absolute"
+        className=" top-6 sm:top-10 left-5 sm:left-10 text-3xl  sm:text-4xl cursor-pointer absolute"
         onClick={() => {
           router.back();
         }}

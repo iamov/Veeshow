@@ -39,7 +39,7 @@ const Navbar = ({active}) => {
             <div className=' flex items-center cursor-pointer ' onClick={()=>{
       router.push(`/`)
     }}>
-              <img src='/logologo.png' className={` ${active? 'w-12':' w-8 sm:w-10 md:w-16'} mr-2`}/>
+              <img src='/logologo.png' className={` ${active? 'w-8 sm:w-12':' w-8 sm:w-10 md:w-16'} mr-2`}/>
               <h2 className=' text-xl sm:text-2xl md:text-3xl font-extrabold '>Let's Stream</h2>
             </div>
             <ul className=' md:flex w-[40%] hidden lg:w-[35%] xl:w-3/12 text-white justify-between font-bold items-center text-lg'>

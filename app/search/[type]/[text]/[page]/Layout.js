@@ -58,14 +58,14 @@ const Layout = ({type, texts, page}) => {
   return (
     <div className="relative min-h-[100vh] flex justify-center">
       <div
-        className="top-10 left-10 text-4xl cursor-pointer absolute"
+        className="top-6 sm:top-10 left-5 sm:left-10 text-3xl  sm:text-4xl cursor-pointer absolute"
         onClick={() => router.back()}
       >
         <IoArrowBack />
       </div>
-      <div className="pt-24 w-2/3 flex flex-col items-center">
+      <div className=" pt-14 sm:pt-24 w-[95%] md:w-[80%]  xl:w-2/3 flex flex-col items-center">
         <div className="mb-3 cursor-pointer hover:scale-95 transition-all duration-300 ease-in-out"  onClick={() => router.push('/')}>
-          <img src="/logologo.png" className="w-20" alt="Logo" />
+          <img src="/logologo.png" className=" w-14 sm:w-20" alt="Logo" />
         </div>
         <div className=' mb-4  font-semibold text-xl text-opacity-80 text-white'><p>Search for movies and series</p></div>
         <Formik
@@ -76,12 +76,12 @@ const Layout = ({type, texts, page}) => {
           onSubmit={handle}
         >
           {({ values, setFieldValue }) => (
-            <Form className="w-[70%] flex flex-col items-center">
+            <Form className=" sm:w-[70%] flex flex-col items-center">
               <div className=' flex w-full'>
               <div className="mb-4 w-full flex flex-col items-center">
                 <Field
                   name="query"
-                  className="w-full h-12 border-white border-[2px] border-opacity-40 bg-transparent rounded-l-xl px-3"
+                  className="w-full h-12 border-white border-[2px] border-opacity-40 bg-transparent rounded-xl px-3"
                   type="text"
                   placeholder="Search for movies or series"
                 />
@@ -116,7 +116,7 @@ const Layout = ({type, texts, page}) => {
        {load?<div>
         <img src='/logologo.png' className=' w-10 animate-bounce mt-10'/>
        </div> :
-        <div className='  w-[100%] mt-10 '>
+        <div className='  w-[100%] sm:mt-10 '>
           <div className=' flex flex-wrap justify-center'>
             {list.map((data)=>{
               return(
