@@ -13,7 +13,7 @@ export const middleware = async (req)=>{
         const token = req.headers.get("accessToken");
         if(!token)
         {
-            return new NextResponse({success:false, message:'Please login'})
+            return new NextResponse(JSON.stringify({success:false, message:'Please login'}))
         }
         else{
             const verifyWithJWTS = await verifyToken(token);
@@ -29,7 +29,7 @@ export const middleware = async (req)=>{
     }
     catch(err)
     {
-        return new NextResponse({success:false, message:'Please login'})
+        return new NextResponse(JSON.stringify({success:false, message:'Please login'}))
     }
 }
 

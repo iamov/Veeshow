@@ -4,6 +4,10 @@ import { state } from "./store"
 export const History = async(body)=>{
     try{
     const token = await getCookies()
+    if(!token)
+        {
+            return
+        }
     const data = await fetch(`/api/pushhistory`,{
         method:'PUT',
         headers:{'Content-Type': 'application/json', 'accessToken': token},
@@ -20,6 +24,10 @@ export const WishList = async(body)=>{
     try{
     state.wishload = true
     const token = await getCookies()
+    if(!token)
+        {
+            return 
+        }
     const data = await fetch(`/api/pushwishlist`,{
         method:'PUT',
         headers:{'Content-Type': 'application/json', 'accessToken': token},
@@ -52,6 +60,10 @@ catch(err)
 export const getUserDetail = async ()=>{
     try{
         const token = await getCookies()
+        if(!token)
+            {
+                return 
+            }
         const data = await fetch(`/api/getuser`,{
             method:'GET',
             headers:{'accessToken': token},
@@ -66,8 +78,11 @@ export const getUserDetail = async ()=>{
 
 export const DeleteWish = async (body)=>{
     try{
-        console.log(body)
         const token = await getCookies()
+        if(!token)
+            {
+                return
+            }
         const data = await fetch(`/api/deletewishlist`,{
             method:'DELETE',
             headers:{'accessToken': token},
@@ -84,6 +99,10 @@ export const DeleteWish = async (body)=>{
 export const getUserHistory = async ()=>{
     try{
         const token = await getCookies()
+        if(!token)
+        {
+            return []
+        }
         const data = await fetch(`/api/gethistory`,{
             method:'GET',
             headers:{'accessToken': token},
@@ -99,6 +118,10 @@ export const getUserHistory = async ()=>{
 export const getUserWishlist = async ()=>{
     try{
         const token = await getCookies()
+        if(!token)
+        {
+            return []
+        }
         const data = await fetch(`/api/getwishlist`,{
             method:'GET',
             headers:{'accessToken': token},
@@ -114,6 +137,10 @@ export const getUserWishlist = async ()=>{
 export const getWishlistId = async ()=>{
     try{
         const token = await getCookies()
+        if(!token)
+        {
+            return []
+        }
         const data = await fetch(`/api/wishlistid`,{
             method:'GET',
             headers:{'accessToken': token},
