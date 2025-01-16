@@ -2,10 +2,10 @@ import { jwtVerify } from 'jose';
 import { NextResponse } from 'next/server';
 
 async function verifyToken(token) {
-    if (!process.env.JWTS) {
+    if (!process.env.DB_JWTS) {
         throw new Error('JWT secret key (JWTS) is not configured');
     }
-    const secret = new TextEncoder().encode(process.env.JWTS);
+    const secret = new TextEncoder().encode(process.env.DB_JWTS);
     const { payload } = await jwtVerify(token, secret);
     return payload;
 }

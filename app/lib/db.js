@@ -13,7 +13,7 @@ const mongoosedb = async()=>{
                 return;
             }
         
-        const con = await mongoose.connect(process.env.MONGO_URL,{
+        const con = await mongoose.connect(process.env.DB_MONGOURL,{
             dbName:"Lets",
             bufferCommands:true
         })

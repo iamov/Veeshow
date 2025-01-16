@@ -25,7 +25,7 @@ export const POST = async(req)=>{
         const result = await bcrypt.compare(dataReq.password, info.password);
         if (result) {
             const id = info._id;
-            const token = JWT.sign({ id }, process.env.JWTS);
+            const token = JWT.sign({ id }, process.env.DB_JWTS);
         (await cookies()).set('accessToken', token,{
             httpOnly: true,
             maxAge: 24 * 60 * 60,
