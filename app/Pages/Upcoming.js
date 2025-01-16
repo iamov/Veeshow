@@ -41,7 +41,7 @@ const Upcoming = ({Trailer}) => {
     <section className=' w-full md:w-[80%] lg:w-[65%] flex items-start '>
     <div className=' xl:mr-5 flex justify-center items-center'>
         {url&&
-        <div className='2xl:w-[740px] w-[340px] xs:w-[460px] sm:w-[580px] md:w-[640px] ' >
+        <div className='2xl:w-[740px] w-[340px]  xs:w-[460px] sm:w-[580px] md:w-[640px] ' >
         <YouTube videoId={url} title={tmdb.name} opts={opts} />
         </div>}
     </div>
