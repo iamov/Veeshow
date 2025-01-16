@@ -30,7 +30,7 @@ export const middleware = async (req) => {
         console.error(err);
         const status = err.message.includes('JWT') ? 500 : 401;
         return NextResponse.json(
-            { success: false, message: 'Please login', error: err.message, new:process.env.JWTS },
+            { success: false, message: 'Please login', error: err.message, new:process.env.DB_JWTS },
             { status }
         );
     }
