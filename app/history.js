@@ -118,7 +118,6 @@ export const getUserHistory = async ()=>{
 export const getUserWishlist = async ()=>{
     try{
         const token = await getCookies()
-        console.log(token)
         if(!token)
         {
             return []
