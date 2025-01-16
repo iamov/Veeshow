@@ -46,7 +46,7 @@ const Bodyjs =  ({params}) => {
       setSeason(array)
     }
     const wishlistId = await getWishlistId()
-    setWishlistArray(wishlistId)
+    setWishlistArray(wishlistId || [])
     const ur = await api.get(`/3/${type}/${id}/recommendations?language=en-US&page=1`);
     if(type == 'movie')
     {
