@@ -12,8 +12,10 @@ const MainBody = () => {
   const [WishVideos, setWishVidoes] = useState([]);
   const [load, setload] = useState(false)
   const GET = async () => {
+    setload(true)
     const data = await getUserWishlist();
     setWishVidoes(data || []);
+    setload(false)
   };
   useEffect(() => {
     GET();
