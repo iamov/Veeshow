@@ -38,8 +38,7 @@ export default function Home() {
     }
     catch(error)
     {
-      
-      router.push('/not-found')
+      console.log(error)
     }
     finally{
     
