@@ -128,7 +128,7 @@ export const getUserWishlist = async ()=>{
             headers:{'accessToken': token},
         })
         const info = await data.json()
-        console.log(data)
+        console.log(info)
         return info.data
     }
     catch(error){
