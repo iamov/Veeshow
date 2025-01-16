@@ -87,12 +87,12 @@ const Menu = () => {
                  state.showmenu = false
                 router.push(`/tv/16/${previousYear}/1/1`)
             }}><span className=' mr-2'><GiReactor/></span><p>Animes</p></h1>
-            <h1 className=' cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
+            {log &&<h1 className=' cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
               state.showmenu = false
-              router.push(`/history`)}}><span className=' mr-2'><MdLocalMovies/></span><p>Recent Watch</p></h1>
-            <h1 className='  cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
+              router.push(`/history`)}}><span className=' mr-2'><MdLocalMovies/></span><p>Recent Watch</p></h1>}
+            {log &&<h1 className='  cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
               state.showmenu = false
-              router.push(`/wishlist`)}}><span className=' mr-2'><TbJewishStarFilled/></span><p>Wish List</p></h1>
+              router.push(`/wishlist`)}}><span className=' mr-2'><TbJewishStarFilled/></span><p>Wish List</p></h1>}
             <h1 className=' hidden cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold md:flex items-center' onClick={()=>{
 
               }}><span className=' mr-2'><FaDiscord/></span><p>Discord</p></h1>

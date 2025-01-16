@@ -76,7 +76,7 @@ const Layout = ({type, texts, page}) => {
           onSubmit={handle}
         >
           {({ values, setFieldValue }) => (
-            <Form className=" sm:w-[70%] flex flex-col items-center">
+            <Form className="w-[90%] sm:w-[70%] flex flex-col items-center">
               <div className=' flex w-full'>
               <div className="mb-4 w-full flex flex-col items-center">
                 <Field

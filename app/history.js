@@ -146,7 +146,6 @@ export const getWishlistId = async ()=>{
             headers:{'accessToken': token},
         })
         const info = await data.json()
-        console.log(info)
         return info?.data
     }
     catch(error){

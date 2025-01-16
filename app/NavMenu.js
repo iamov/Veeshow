@@ -59,7 +59,7 @@ const NavMenu = () => {
       initial={{  x: 400 }}
     animate={{ x: 0 , transition:{ duration: 0.5 }}}
     exit={{  x: 400, transition:{ duration: 0.5 } }} 
-    ref={menuRef} className=' fixed right-0 top-0 z-50 h-full border-l-white border-l-[1px] border-opacity-5 bg-gradient-to-b from-gray-900 to-black pt-40 w-60 px-5'>
+    ref={menuRef} className='md:inline hidden fixed right-0 top-0 z-50 h-full border-l-white border-l-[1px] border-opacity-5 bg-gradient-to-b from-gray-900 to-black pt-40 w-60 px-5'>
         <div>
             <h1 className=' mb-4 text-sm font-bold'>Menu</h1>
             <p className = "mb-10 font-semibold flex items-center"><span className='mr-2'>Hello,</span> <span className=' font-bold text-green-500'>{capitalizeFirstLetter(name)}</span></p>

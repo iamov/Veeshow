@@ -16,7 +16,7 @@ useEffect(()=>{
   return (
     <>
         {
-        (recent.length != 0 &&<div className='min-h-96 mb-14'>
+        (recent.length != 0 &&<div className=' min-h-80 sm:min-h-96 mb-10 sm:mb-14'>
             <RecentWatch BackgroundList={recent} Title={"Recently Watched"}/>
         </div>)}
     </>

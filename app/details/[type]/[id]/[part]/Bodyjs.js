@@ -103,7 +103,7 @@ const Bodyjs =  ({params}) => {
           router.push('/')
         }}><IoArrowBack /></div>
         <section className='  w-[95%] md:w-[90%] 2xl:w-[60%] flex md:flex-row flex-col items-center justify-between'>
-          <div className=' mb-5 md:mb-0 w-full lg:w-[40%] flex justify-center md:justify-start lg:justify-center'>
+          <div className=' mb-5 md:mb-0 w-full min-h-72 lg:w-[40%] flex justify-center md:justify-start lg:justify-center'>
             <img src={`${Size}${Detail.poster_path}`} className=' w-40 md:w-60 lg:w-72 shadow-sm shadow-black rounded-md'/>
           </div>
           <div className=' w-[100%] sm:w-[60%] flex flex-col items-center'>
@@ -111,9 +111,9 @@ const Bodyjs =  ({params}) => {
             <i className=' font-semibold text-gray-300 mb-1'>`{Detail?.tagline}`</i>
             <div className=' font-semibold flex items-center mb-1'><h2 className=' mr-2'>{Detail?.origin_country}</h2><h2 className=' mr-5'>{Detail?.release_date}</h2><div className=' font-semibold'><span className=' mr-2'>Runtime:</span><span>{Detail?.runtime}</span> MIN</div></div>
             
-            <div className=' flex items-center mb-5'>
+            <div className=' flex flex-wrap w-full justify-center items-center mb-5'>
               {Detail.genres.map((data)=>{
-                return <p key={data.id} className=' font-semibold mr-3 px-2 whitespace-nowrap bg-red-900 py-1 rounded-sm'>{data.name}</p>
+                return <p key={data.id} className=' font-semibold mr-3 px-2 whitespace-nowrap bg-red-900 py-1 mb-1 rounded-sm'>{data.name}</p>
               })}
             </div>
             <div className='text-center mb-10 font-medium  px-3 text-lg h-20 overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-red-400'>
