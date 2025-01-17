@@ -31,12 +31,12 @@ const Top = ({ BackgroundList }) => {
     episode:'1'
   }
   return (
-    <div className="relative min-h-[100vh] w-[100vw] overflow-hidden ">
+    <div className="relative  w-[100vw] py-96 md:min-h-[100vh]  overflow-hidden ">
       
       <AnimatePresence>
         <motion.div
           key={currentIndex}
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          className="absolute top-0 left-0   w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: `url(${Api}${BackgroundList[currentIndex]?.backdrop_path})`,
           }}
