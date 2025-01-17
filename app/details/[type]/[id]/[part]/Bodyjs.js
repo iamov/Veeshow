@@ -89,6 +89,10 @@ const Bodyjs =  ({params}) => {
     season:'1',
     episode:'1'
   }
+
+  const addDefaultImg = ev => {
+    ev.target.src = "/dfi.png"
+ }
   return (
     <section className=' relative min-h-[100vh]'>
       <div      
@@ -104,7 +108,7 @@ const Bodyjs =  ({params}) => {
         }}><IoArrowBack /></div>
         <section className='  w-[95%] md:w-[90%] 2xl:w-[60%] flex md:flex-row flex-col items-center justify-between'>
           <div className=' mb-5 md:mb-0 w-full min-h-72 lg:w-[40%] flex justify-center md:justify-start lg:justify-center'>
-            <img src={`${Size}${Detail.poster_path}`} className=' w-40 md:w-60 lg:w-72 shadow-sm shadow-black rounded-md'/>
+            <img onError={addDefaultImg} src={`${Size}${Detail.poster_path}`} className=' w-40 md:w-60 lg:w-72 shadow-sm shadow-black rounded-md'/>
           </div>
           <div className=' w-[100%] sm:w-[60%] flex flex-col items-center'>
             <h1 className=' text-3xl sm:text-5xl font-bold mb-1 text-center'>{Detail?.name || Detail?.original_name || Detail?.title }</h1>

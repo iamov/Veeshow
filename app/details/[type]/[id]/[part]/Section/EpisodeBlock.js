@@ -22,7 +22,7 @@ const EpisodeBlock = ({data,id, Detail}) => {
           }
     
           const addDefaultImg = ev => {
-            ev.target.src = "/imageph.png"
+            ev.target.src = "/dfi.png"
          }
 
   return (
