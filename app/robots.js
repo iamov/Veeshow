@@ -3,8 +3,8 @@ export default function robots() {
       rules: {
         userAgent: '*',
         allow: '/',
-        disallow: ['/dmca','/watch']
+        disallow: ['/','/watch']
       },
-      sitemap: 'https://vidplus.com.ng/sitemap.xml',
+      sitemap: 'https://letstream.site/sitemap.xml',
     }
   }
