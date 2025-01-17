@@ -16,7 +16,7 @@ const Layout = ({type, texts, page}) => {
   const [pagesNo, setPageNo] = useState(0)
   const handle  = async (values)=>{
     const { query, types} = values;
-    if (!query.trim() || text == query)
+    if (!query.trim())
       {
         return
       }
