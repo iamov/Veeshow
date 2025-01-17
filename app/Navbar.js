@@ -64,7 +64,7 @@ const Navbar = ({active}) => {
                   state.showmenu = true
                 }}><IoMdMenu/></div>
                 <div className=' hidden md:inline'>{log?
-                <div className=' cursor-pointer border-[1px] hover:scale-[90%] transition-all duration-300 ease-in-out border-white rounded-full'  onClick={()=>{
+                <div className=' cursor-pointer border-[1px] hover:scale-[90%] transition-all duration-300 ease-in-out border-white  min-w-10 min-h-10 rounded-full'  onClick={()=>{
                   state.show = true
                 }}>
                   <img src='/13.png' className=' w-10 '/>
