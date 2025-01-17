@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { IoChevronBack } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa";
 import { useRouter } from 'nextjs-toploader/app';
@@ -37,9 +37,22 @@ const Stream = ({ id, type, season, eps }) => {
       Name: "No Ads Stream",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
-      id: 5 ,
+      id: 5,
     },
   ];
+
+  // Check for saved API preference in localStorage on mount
+  useEffect(() => {
+    const savedApi = localStorage.getItem("selectedApi");
+    if (savedApi) {
+      setSelectedApi(savedApi);
+    }
+  }, []);
+
+  // Save selected API to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("selectedApi", selectedApi);
+  }, [selectedApi]);
 
   // Find the selected API based on `selectedApi`
   const currentApi = StreamApi.find(api => api.Name === selectedApi);
