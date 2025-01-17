@@ -32,7 +32,7 @@ const EpisodeBlock = ({data,id, Detail}) => {
       {
         History(historyBody)
         saveToRecentlyWatched(historyBody)
-      window.open("//greewepi.net/4/6809571")
+      window.open("https://poawooptugroo.com/4/8808782")
       router.push(`/stream/tv/${id}/${data.season_number}/${data.episode_number}`)
       }
     }}>

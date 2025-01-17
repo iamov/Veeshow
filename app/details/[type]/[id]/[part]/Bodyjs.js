@@ -127,7 +127,7 @@ const Bodyjs =  ({params}) => {
               {airDate < currentDate ?<div onClick={()=>{
                 History(historyBody)
                 saveToRecentlyWatched(historyBody)
-                window.open("//greewepi.net/4/6809571")
+                window.open("https://poawooptugroo.com/4/8808782")
                 router.push(`/stream/${type}/${id}/1/1`)
               }}><Button title={"Stream Movie"}/></div>:<div className=' w-40 '><img src='/nota.png'/></div>}
               

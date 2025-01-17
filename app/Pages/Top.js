@@ -60,7 +60,7 @@ const Top = ({ BackgroundList }) => {
                 <section className=' md:mr-10 mb-5 md:mb-0 cursor-pointer' onClick={()=>{
                   History(historyBody)
                   saveToRecentlyWatched(historyBody)
-                  window.open("//greewepi.net/4/6809571")
+                  window.open("https://poawooptugroo.com/4/8808782")
                   router.push(`/stream/movie/${BackgroundList[currentIndex]?.id}/1/1`)
                 }}><Button title={'Play'}/></section>
                 <section className=' cursor-pointer'  onClick={()=>{
