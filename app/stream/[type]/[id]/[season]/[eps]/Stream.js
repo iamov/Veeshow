@@ -16,21 +16,21 @@ const Stream = ({ id, type, season, eps }) => {
       id: 1,
     },
     {
+      Name: "AutoEmbed",
+      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=1`,
+      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=1`,
+      id: 2,
+    },
+    {
       Name: "Embed",
       scrMovie: `https://embed.su/embed/movie/${id}`,
       scrSeries: `https://embed.su/embed/tv/${id}/${season}/${eps}`,
-      id: 2,
+      id: 3,
     },
     {
       Name: "VidScr",
       scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
       scrSeries: `https://vidsrc.xyz/embed/tv/${id}/${season}-${eps}`,
-      id: 3,
-    },
-    {
-      Name: "AutoEmbed",
-      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=1`,
-      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=1`,
       id: 4,
     },
     {
