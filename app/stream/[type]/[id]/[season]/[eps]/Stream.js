@@ -33,6 +33,12 @@ const Stream = ({ id, type, season, eps }) => {
       scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}`,
       id: 4,
     },
+    {
+      Name: "No Ads Stream",
+      scrMovie: `https://play2.123embed.net/movie/${id}`,
+      scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
+      id: 5,
+    },
   ];
 
   // Find the selected API based on `selectedApi`
@@ -63,7 +69,7 @@ const Stream = ({ id, type, season, eps }) => {
               dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
             }}
           >
-            <div className='mr-2'>{selectedApi}</div>
+            <div className='mr-4'>{selectedApi}</div>
             <FaAngleDown />
           </div>
           <div
