@@ -1,5 +1,4 @@
 import Body from "./Body";
-import { cookies } from 'next/headers';
 
 export const metadata = {
   title:{
@@ -31,6 +30,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className=" scrollbar-thin scrollbar-track-black scrollbar-thumb-white select-none" suppressHydrationWarning>
+         <head><meta name="monetag" content="7aeece893954aa98d10a7f34691f1d31"/>
+         </head>
       <Body children={children}/>
     </html>
   );

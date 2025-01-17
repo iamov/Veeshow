@@ -23,6 +23,7 @@ const Body = ({children}) => {
     className={`   ${dosis.className} antialiased`}
     suppressHydrationWarning
   >
+    <link rel="icon" href="/logologo.png" sizes="any" />
         <NextTopLoader 
        color="#fffd00"
        initialPosition={0.08}
