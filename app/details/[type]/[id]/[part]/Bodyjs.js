@@ -8,7 +8,7 @@ import Footer from '@/app/Footer';
 import Section from './Section/Section';
 import Loading from '@/app/Loading';
 import { IoArrowBack } from "react-icons/io5";
-import { getWishlistId, History, saveToRecentlyWatched, WishList } from '@/app/history';
+import { getWishlistId, WishList } from '@/app/history';
 import TrailerBox from './Comment';
 import Button from '@/app/Component/Button';
 
@@ -81,11 +81,11 @@ const Bodyjs =  ({params}) => {
   const historyBody = {
     id:Detail?.id,
     media_type:type,
-    poster_path:Detail.poster_path,
-    name:Detail.name,
-    original_name:Detail.original_name,
-    title:Detail.title,
-    vote_average:Detail.vote_average,
+    poster_path:Detail?.poster_path,
+    name:Detail?.name,
+    original_name:Detail?.original_name,
+    title:Detail?.title,
+    vote_average:Detail?.vote_average,
     season:'1',
     episode:'1'
   }
@@ -108,7 +108,7 @@ const Bodyjs =  ({params}) => {
         }}><IoArrowBack /></div>
         <section className='  w-[95%] md:w-[90%] 2xl:w-[60%] flex md:flex-row flex-col items-center justify-between'>
           <div className=' mb-5 md:mb-0 w-full min-h-72 lg:w-[40%] flex justify-center md:justify-start lg:justify-center'>
-            <img onError={addDefaultImg} src={`${Size}${Detail.poster_path}`} className=' w-40 md:w-60 lg:w-72 shadow-sm shadow-black rounded-md'/>
+            <img onError={addDefaultImg} src={`${Size}${Detail?.poster_path}`} className=' w-40 md:w-60 lg:w-72 shadow-sm shadow-black rounded-md'/>
           </div>
           <div className=' w-[100%] sm:w-[60%] flex flex-col items-center'>
             <h1 className=' text-3xl sm:text-5xl font-bold mb-1 text-center'>{Detail?.name || Detail?.original_name || Detail?.title }</h1>
@@ -125,8 +125,6 @@ const Bodyjs =  ({params}) => {
             </div>
             <div className=' flex sm:flex-row flex-col justify-center items-center cursor-pointer'>
               {airDate < currentDate ?<div onClick={()=>{
-                History(historyBody)
-                saveToRecentlyWatched(historyBody)
                 window.open("https://poawooptugroo.com/4/8808782")
                 router.push(`/stream/${type}/${id}/1/1`)
               }}><Button title={"Stream Movie"}/></div>:<div className=' w-40 '><img src='/nota.png'/></div>}

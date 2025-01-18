@@ -11,9 +11,9 @@ const RecentWatch = ({BackgroundList, Title, type}) => {
       <section className=' w-[95%] 2xl:w-5/6 overflow-x-scroll scrollbar-none'>
         <div className=' flex items-center '>
           {
-            BackgroundList.map((data)=>{
+            BackgroundList?.map((data,i)=>{
               return(
-                <div key={data.id} className=' m-2 '>
+                <div key={i} className=' m-2 '>
                   <RecentBlock data={data} passType={type}/>
                 </div>
               )

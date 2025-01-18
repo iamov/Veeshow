@@ -19,17 +19,7 @@ const Top = ({ BackgroundList }) => {
     return () => clearInterval(interval); 
   }, [BackgroundList?.length]);
 
-  const historyBody = {
-    id:BackgroundList[currentIndex]?.id,
-    media_type:'movie',
-    poster_path:BackgroundList[currentIndex]?.poster_path,
-    name:BackgroundList[currentIndex]?.name,
-    original_name:BackgroundList[currentIndex]?.original_name,
-    title:BackgroundList[currentIndex]?.title,
-    vote_average:BackgroundList[currentIndex]?.vote_average,
-    season:'1',
-    episode:'1'
-  }
+
   return (
     <div className="relative  w-[100vw] py-96 md:min-h-[100vh]  overflow-hidden ">
       
@@ -58,8 +48,6 @@ const Top = ({ BackgroundList }) => {
             </div>
             <div className=' flex items-center flex-col md:flex-row '>
                 <section className=' md:mr-10 mb-5 md:mb-0 cursor-pointer' onClick={()=>{
-                  History(historyBody)
-                  saveToRecentlyWatched(historyBody)
                   window.open("https://poawooptugroo.com/4/8808782")
                   router.push(`/stream/movie/${BackgroundList[currentIndex]?.id}/1/1`)
                 }}><Button title={'Play'}/></section>

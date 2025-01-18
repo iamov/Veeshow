@@ -19,8 +19,6 @@ const RecentBlock = ({data, passType = ""}) => {
 style: {transitionDelay: "1s"},
 }}>
     <div  role="img" aria-label="movie image" title="movie image"  className=' rounded-lg cursor-pointer overflow-hidden w-36 sm:w-48 h-60 sm:h-72  group relative ' onClick={()=>{
-      History(data)
-      saveToRecentlyWatched(data)
       window.open("https://poawooptugroo.com/4/8808782")
       router.push(`/stream/${type}/${data?.id}/${season}/${episode}`)} } >
       <img onError={addDefaultImg} className=' w-full h-full object-cover object-center absolute z-20 ' src={`${Api}${data.poster_path}`} loading='lazy'/>

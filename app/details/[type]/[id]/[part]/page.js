@@ -9,9 +9,9 @@ export async function generateMetadata({params}){
   const id = detail?.id
   const datas = await api.get(`/3/${type}/${id}`)
   const data = datas
-  const title =  type == "tv"?data.name:data.title
+  const title =  type == "tv"?data?.name:data?.title
   const overview = data.overview
-  const image = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${data.poster_path}`
+  const image = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${data?.poster_path}`
 return{
   title:{
     default: `${title} `},

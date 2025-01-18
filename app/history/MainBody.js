@@ -36,7 +36,7 @@ const [load, setload] = useState(false)
               <div className=' w-full  flex justify-center  flex-wrap'>
               {HistoryVideos.map((e,i)=>{
                 return(
-                <div key={e.id} className=' m-2 relative z-40 '>
+                <div key={i} className=' m-2 relative z-40 '>
                   <RecentBlock data={e}/>
                 </div>)
               })}

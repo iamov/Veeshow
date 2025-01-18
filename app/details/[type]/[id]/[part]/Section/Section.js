@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Apicore from '@/app/Api/ApiCore'
 import List from './List'
 import { useRouter } from 'nextjs-toploader/app';
+import { FaAngleDown } from "react-icons/fa";
 
 
 const Section = ({season, id, part,Detail}) => {
       const router = useRouter()
     const api = new Apicore()
     const [list, Setlist] = useState([])
+    const [isOpen, setIsOpen] = useState(false);
 
     const GetSeason = async()=>{
         try{
@@ -27,14 +29,31 @@ const Section = ({season, id, part,Detail}) => {
     <div className=' flex justify-center w-full pb-20'>
         <div className=' w-[95%] sm:w-[90%] xl:w-2/3'>
             <div>
-                <select className=' cursor-pointer bg-transparent w-[80%] sm:w-80 outline-none font-semibold border-white border-[1px] border-opacity-50 p-4 rounded-md' value={part}   onChange={(e) => {
-                    const selectedIndex = e.target.value;
-                    router.push(`/details/tv/${id}/${selectedIndex}`);
-                        }}>
-                    {season.map((e,i)=>{
-                        return(<option key={i} className=' cursor-pointer bg-[rgba(0,0,0,1)] hover:bg-slate-600 my-5 flex items-center font-semibold' value={i + 1}>Season {i + 1}</option>)
-                    })}
-                </select>
+    <div className=" z-40 relative w-[80%] sm:w-36">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full sm:text-lg  flex items-center  border-[2px] bg-transparent font-semibold border-white border-opacity-50 p-4 rounded-md text-left"
+      >
+       <p className=' mr-4'>{`Season ${part}`}</p>
+       <span><FaAngleDown/></span> 
+      </button>
+      {isOpen && (
+        <div className="absolute mt-2 bg-black border border-opacity-50 rounded-md max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300 w-full z-10">
+          {season.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => {
+                setIsOpen(false);
+                router.push(`/details/tv/${id}/${i + 1}`);
+              }}
+              className="cursor-pointer hover:bg-slate-600 p-3 font-semibold"
+            >
+              {`Season ${i + 1}`}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
             </div>
             <div>
                 <List list={list} id={id} Detail={Detail}/>

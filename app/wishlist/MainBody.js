@@ -57,7 +57,7 @@ const MainBody = () => {
         <div className=" w-full  flex  flex-wrap">
           {WishVideos.map((e, i) => {
             return (
-              <div key={e.id} className=" flex flex-col items-center m-2 mb-4 relative z-40 group ">
+              <div key={i} className=" flex flex-col items-center m-2 mb-4 relative z-40 group ">
                 <MovieBlock data={e} />
                 <div className="h-5 w-full">
                 <div onClick={()=>Delete(e.id)} className=" hidden cursor-pointer justify-center rounded-b-md hover:bg-red-800 group-hover:flex w-full py-1 text-center bg-red-600 font-semibold">Remove</div>

@@ -9,17 +9,6 @@ const EpisodeBlock = ({data,id, Detail}) => {
           const router = useRouter()
           let airDate = data?.air_date ? new Date(data.air_date) : null
           let currentDate = new Date()
-      const historyBody = {
-            id:Detail?.id,
-            media_type:'tv',
-            poster_path:Detail.poster_path,
-            name:Detail.name,
-            original_name:Detail.original_name,
-            title:Detail.title,
-            vote_average:Detail.vote_average,
-            season:data.season_number,
-            episode:data.episode_number
-          }
     
           const addDefaultImg = ev => {
             ev.target.src = "/dfi.png"
@@ -30,8 +19,6 @@ const EpisodeBlock = ({data,id, Detail}) => {
    <div className=' w-full h-full hover:scale-95 cursor-pointer transition-all duration-500 ease-in-out' onClick={()=>{
       if (airDate < currentDate && airDate )
       {
-        History(historyBody)
-        saveToRecentlyWatched(historyBody)
       window.open("https://poawooptugroo.com/4/8808782")
       router.push(`/stream/tv/${id}/${data.season_number}/${data.episode_number}`)
       }

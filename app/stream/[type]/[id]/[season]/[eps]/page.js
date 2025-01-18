@@ -7,8 +7,9 @@ const page = async ({params}) => {
     const type = param?.type
     const season = param?.season
     const eps = param?.eps
+    const list = param?.list
   return (
-    <Stream id={id} type={type} season={season} eps={eps}/>
+    <Stream id={id} type={type} season={season} eps={eps} list={list}/>
   )
 }
 
