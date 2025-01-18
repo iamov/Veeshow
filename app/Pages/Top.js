@@ -14,7 +14,7 @@ const Top = ({ BackgroundList }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % BackgroundList.length);
-    }, 6000);
+    }, 60000);
 
     return () => clearInterval(interval); 
   }, [BackgroundList?.length]);
