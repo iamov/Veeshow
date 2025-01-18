@@ -14,7 +14,7 @@ const Top = ({ BackgroundList }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % BackgroundList.length);
-    }, 60000);
+    }, 6000);
 
     return () => clearInterval(interval); 
   }, [BackgroundList?.length]);
@@ -53,7 +53,7 @@ const Top = ({ BackgroundList }) => {
             <h3>{BackgroundList[currentIndex]?.release_date}</h3>
             </div>
             
-            <div className=' md:text-lg min-h-28 text-center md:text-start font-medium mb-7 w-[95%] xl:w-[80%]'>
+            <div className=' md:text-lg min-h-20 text-center md:text-start font-medium mb-3 w-[95%] xl:w-[80%]'>
                 <h2>{truncateText(BackgroundList[currentIndex]?.overview, 200)}</h2>
             </div>
             <div className=' flex items-center flex-col md:flex-row '>
