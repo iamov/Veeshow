@@ -70,31 +70,31 @@ const Stream = ({ id, type, season, eps }) => {
   
   const StreamApi = [
     {
-      Name: "Club",
+      Name: "SERVER 1",
       scrMovie: `https://moviesapi.club/movie/${id}`,
       scrSeries: `https://moviesapi.club/tv/${id}-${season}-${eps}`,
       id: 1,
     },
     {
-      Name: "AutoEmbed",
+      Name: "SERVER 2",
       scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
       scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
       id: 2,
     },
     {
-      Name: "Embed",
+      Name: "SERVER 3",
       scrMovie: `https://embed.su/embed/movie/${id}`,
       scrSeries: `https://embed.su/embed/tv/${id}/${season}/${eps}`,
       id: 3,
     },
     {
-      Name: "VidScr",
+      Name: "SERVER 4",
       scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
       scrSeries: `https://vidsrc.xyz/embed/tv/${id}/${season}-${eps}`,
       id: 4,
     },
     {
-      Name: "No Ads Stream",
+      Name: "SERVER 5 [No Ads]",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
       id: 5,
