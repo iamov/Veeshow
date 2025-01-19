@@ -121,7 +121,7 @@ const Stream = ({ id, type, season, eps }) => {
     localStorage.setItem("selectedApi", selectedApi);
   }, [selectedApi]);
 
-  const currentApi = StreamApi.find(api => api.Name === selectedApi);
+  const currentApi = StreamApi.find(api => api.Name === selectedApi) || StreamApi[0];
   const iframeSrc = type === "tv" ? currentApi?.scrSeries : currentApi?.scrMovie;
 
   if(episode)
