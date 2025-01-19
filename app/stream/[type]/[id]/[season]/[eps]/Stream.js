@@ -94,7 +94,7 @@ const Stream = ({ id, type, season, eps }) => {
       id: 4,
     },
     {
-      Name: "SERVER 5 [No Ads]",
+      Name: "SERVER 5 No Ads",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
       id: 5,
