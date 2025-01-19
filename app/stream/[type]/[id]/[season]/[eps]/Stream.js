@@ -9,7 +9,7 @@ import { History, saveToRecentlyWatched } from '@/app/history';
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
-  const [selectedApi, setSelectedApi] = useState("Club");
+  const [selectedApi, setSelectedApi] = useState("SERVER 1");
   const [list, Setlist] = useState(0)
   const router = useRouter();
   const [arr,setArry] = useState(1) 
@@ -94,7 +94,7 @@ const Stream = ({ id, type, season, eps }) => {
       id: 4,
     },
     {
-      Name: "SERVER 5 No Ads",
+      Name: "SERVER 5 NO ADS",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
       id: 5,
@@ -122,7 +122,7 @@ const Stream = ({ id, type, season, eps }) => {
   }, [selectedApi]);
 
   const currentApi = StreamApi.find(api => api.Name === selectedApi);
-  const iframeSrc = type === "tv" ? currentApi.scrSeries : currentApi.scrMovie;
+  const iframeSrc = type === "tv" ? currentApi?.scrSeries : currentApi?.scrMovie;
 
   if(episode)
     return <Loading/>
