@@ -94,10 +94,22 @@ const Stream = ({ id, type, season, eps }) => {
       id: 4,
     },
     {
+      Name: "SERVER 5",
+      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
+      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
+      id: 5,
+    },
+    {
+      Name: "SERVER 6",
+      scrMovie: `https://111movies.com/movie/${id}`,
+      scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
+      id: 6,
+    },
+    {
       Name: "NO ADS",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
-      id: 5,
+      id: 7,
     },
   ];
 
@@ -160,7 +172,7 @@ const Stream = ({ id, type, season, eps }) => {
           </div>
           <div
             id="ListDropdown"
-            className='absolute max-h-80 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400 right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
+            className='absolute max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400 right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
           >
             {arr.map((ep) => (
               <div
@@ -192,7 +204,7 @@ const Stream = ({ id, type, season, eps }) => {
           </div>
           <div
             id="apiDropdown"
-            className='absolute right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
+            className='absolute max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400  right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
           >
             {StreamApi.map((api) => (
               <div
