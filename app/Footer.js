@@ -15,14 +15,14 @@ const Footer = () => {
             </div>
             <div>
                 <h3 className=' font-semibold text-lg sm:text-2xl mb-2'>Socials</h3>
-                <p className=' font-medium sm:text-base text-sm' onClick={()=>{
+                <p className=' font-medium sm:text-base text-sm cursor-pointer hover:font-semibold' onClick={()=>{
                                 router.push(`https://discord.gg/SdVZGGEw`)}}>Discord</p>
             </div>
             <div>
                 <h3 className=' font-semibold text-lg sm:text-2xl mb-2'>Resource</h3>
-                <p className=' font-medium sm:text-base text-sm' onClick={()=>{
+                <p className=' font-medium sm:text-base text-sm cursor-pointer hover:font-semibold' onClick={()=>{
                                 router.push(`https://discord.gg/SdVZGGEw`)}}>Contact</p>
-                <p className=' font-medium sm:text-base text-sm' >Donate</p>
+                <p className=' font-medium sm:text-base text-sm cursor-pointer hover:font-semibold' >Donate</p>
             </div>
             </div>
             <div className=' w-[80%] md:w-[40%]'><p className=' sm:text-base text-sm text-gray-300 font-medium'>This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p></div>
