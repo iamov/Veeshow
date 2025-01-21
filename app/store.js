@@ -8,6 +8,9 @@ export const state = proxy({
     id:"",
     name:"",
     home:true,
-    showmenu:false
+    showmenu:false,
+    publicMgs:"",
+    alert:false,
+    wishload:false
 })
 

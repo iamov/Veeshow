@@ -11,9 +11,12 @@ import { IoArrowBack } from "react-icons/io5";
 import { getWishlistId, WishList } from '@/app/history';
 import TrailerBox from './Comment';
 import Button from '@/app/Component/Button';
+import { useSnapshot } from 'valtio';
+import { state } from '@/app/store';
 
 
 const Bodyjs =  ({params}) => {
+  const load = useSnapshot(state).wishload
   const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [wishshow, setwishshow] = useState(false)
@@ -89,6 +92,16 @@ const Bodyjs =  ({params}) => {
     season:'1',
     episode:'1'
   }
+  const PUSH = async()=>{
+    const info = await WishList(historyBody)
+    if(info)
+    {
+    setwishshow(true)
+    }
+    else{
+      setwishshow(false)
+    }
+  }
 
   const addDefaultImg = ev => {
     ev.target.src = "/dfi.png"
@@ -103,7 +116,7 @@ const Bodyjs =  ({params}) => {
 
       
       <div className=" py-20 md:py-40  w-full flex justify-center items-center h-full top-0 bg-gradient-to-b from-[rgba(0,0,0,0.5)]  to-[rgba(0,0,0,1)]">
-        <div className=' top-7 left-7 text-4xl cursor-pointer absolute' onClick={()=>{
+        <div className=' top-7 z-50 left-7 text-4xl cursor-pointer absolute' onClick={()=>{
           router.push('/')
         }}><IoArrowBack /></div>
         <section className='  w-[95%] md:w-[90%] 2xl:w-[60%] flex md:flex-row flex-col items-center justify-between'>
@@ -129,11 +142,12 @@ const Bodyjs =  ({params}) => {
                 router.push(`/stream/${type}/${id}/1/1`)
               }}><Button title={"Stream Movie"}/></div>:<div className=' w-40 '><img src='/nota.png'/></div>}
               
-              {(wishlistArray.includes(id) || wishshow)  ||
+              <>
+              {load?
+              <div className=' w-8 h-8 border-white border-[2px] rounded-full border-l-0 animate-spin sm:ml-20'></div>:<>{(wishlistArray.includes(id) || wishshow)  ||
               <><div className=' sm:ml-16 mt-5 sm:mt-0 '  onClick={()=>{
-               WishList(historyBody)
-               setwishshow(true)
-              }}><WishlistButton/></div></>}
+              PUSH()
+              }}><WishlistButton/></div></>}</>}</>
 
 
             </div>

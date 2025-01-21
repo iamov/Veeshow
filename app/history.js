@@ -33,7 +33,21 @@ export const WishList = async(body)=>{
         headers:{'Content-Type': 'application/json', 'accessToken': token},
         body:JSON.stringify(body)
     })
+    const info = await data.json()
+    if(info?.alert)
+    {
+        state.publicMgs = info.message
+        state.alert = true
+
+        setTimeout(() => {
+            state.alert = false;
+          }, 10000); 
+          state.wishload = false
+          return false
+    }
     state.wishload = false
+    return true
+
 }
 catch(error){
     console.log(error)
@@ -96,38 +110,38 @@ export const DeleteWish = async (body)=>{
     }
 }
 
-export const getUserHistory = async ()=>{
+export const getUserHistory = async (page = 1)=>{
     try{
         const token = await getCookies()
         if(!token)
         {
             return []
         }
-        const data = await fetch(`/api/gethistory`,{
+        const data = await fetch(`/api/gethistory?page=${page}`,{
             method:'GET',
             headers:{'accessToken': token},
         })
         const info = await data.json()
-        return info.data
+        return info
     }
     catch(error){
         console.log(error)
     }
 }
 
-export const getUserWishlist = async ()=>{
+export const getUserWishlist = async (page = 1)=>{
     try{
         const token = await getCookies()
         if(!token)
         {
             return []
         }
-        const data = await fetch(`/api/getwishlist`,{
+        const data = await fetch(`/api/getwishlist?page=${page}`,{
             method:'GET',
             headers:{'accessToken': token},
         })
         const info = await data.json()
-        return info.data
+        return info
     }
     catch(error){
         console.log(error)

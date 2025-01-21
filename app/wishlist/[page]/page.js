@@ -3,9 +3,9 @@ import MainBody from './MainBody'
 
 const page = async({params}) => {
   const param = await params
-  const id = param.id
+  const page = param.page
   return (
-    <><MainBody id={id}/></>
+    <><MainBody page={page}/></>
   )
 }
 

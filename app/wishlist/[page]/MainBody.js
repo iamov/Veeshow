@@ -4,17 +4,21 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "nextjs-toploader/app";
 import { IoArrowBack } from "react-icons/io5";
 import TitleBar from "@/app/Component/TitleBar";
-import MovieBlock from "../Pages/MovieBlock";
-import Loading from "../Loading";
+import MovieBlock from "../../Pages/MovieBlock";
+import Loading from "../../Loading";
+import Pagination from "@/app/[type]/[genre]/[date]/[sort]/[page]/Component/Pagination";
 
-const MainBody = () => {
+const MainBody = ({page}) => {
   const router = useRouter();
   const [WishVideos, setWishVidoes] = useState([]);
   const [load, setload] = useState(false)
+  const [pageNo, setPageNo] = useState(1)
+  
   const GET = async () => {
     setload(true)
-    const data = await getUserWishlist();
-    setWishVidoes(data || []);
+    const data = await getUserWishlist(page);
+    setWishVidoes(data.data || []);
+    setPageNo(data?.totalPages || 1)
     setload(false)
   };
   useEffect(() => {
@@ -37,6 +41,14 @@ const MainBody = () => {
 
   }
 
+  const Right =()=>{
+    router.push(`/wishlist/${parseInt(page,10) + 1}`)
+  }
+  const Left =()=>{
+    router.push(`/wishlist/${parseInt(page,10) - 1}`)
+
+  }
+
   if(load)
     return <Loading/>
   return (
@@ -54,7 +66,8 @@ const MainBody = () => {
         <div className=" mb-10">
           <TitleBar title={"My Wishlist"} />
         </div>
-        <div className=" w-full  flex  flex-wrap">
+        <Pagination page={page} noOfPages={pageNo} Right={Right} Left={Left}/>
+        <div className=" w-full mt-2  flex  flex-wrap">
           {WishVideos.map((e, i) => {
             return (
               <div key={i} className=" flex flex-col items-center m-2 mb-4 relative z-40 group ">

@@ -24,13 +24,16 @@ export const PUT = async (req) => {
     if (alreadyAdded) {
       return new NextResponse(
         JSON.stringify({ success: false, message: "Item already added" }),
-        { status: 400 }
+        { status: 200 }
       );
     }
 
     userData.wishlist.unshift(newItem);
-    if (userData.wishlist.length > 20) {
-      userData.wishlist = userData.wishlist.slice(0, 20);
+    if (userData.wishlist.length > 100) {
+      return new NextResponse(
+        JSON.stringify({ success: false, message: "Wishlist full, Please delete to make space", alert:true }),
+        { status: 200 }
+      );
     }
 
     await userData.save();

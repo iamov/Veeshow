@@ -65,10 +65,10 @@ const NavMenu = () => {
             <p className = "mb-10 font-semibold flex items-center"><span className='mr-2'>Hello,</span> <span className=' font-bold text-green-500'>{capitalizeFirstLetter(name)}</span></p>
             <h1 className=' cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
               state.show = false
-              router.push(`/history`)}}><span className=' mr-2'><MdLocalMovies/></span><p>Recent Watch</p></h1>
+              router.push(`/history/1`)}}><span className=' mr-2'><MdLocalMovies/></span><p>Recent Watch</p></h1>
             <h1 className='  cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
               state.show = false
-              router.push(`/wishlist`)}}><span className=' mr-2'><TbJewishStarFilled/></span><p>Wish List</p></h1>
+              router.push(`/wishlist/1`)}}><span className=' mr-2'><TbJewishStarFilled/></span><p>Wish List</p></h1>
             <h1 className=' cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
 
               }}><span className=' mr-2'><FaDiscord/></span><p>Discord</p></h1>

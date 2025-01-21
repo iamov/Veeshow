@@ -18,8 +18,8 @@ import user from "@/app/lib/models/user";
             userData.history = userData.history.filter(item => item.id != newItem.id);
             userData.history.unshift(newItem);
     
-            if (userData.history.length > 20) {
-                userData.history = userData.history.slice(0, 20);
+            if (userData.history.length > 60) {
+                userData.history = userData.history.slice(0, 60);
             }
     
             await userData.save();

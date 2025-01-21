@@ -8,6 +8,7 @@ import { useSnapshot } from 'valtio';
 import { state } from './store';
 import NavMenu from './NavMenu';
 import Menu from './Menu';
+import Message from './Message';
 
 
 const dosis = Dosis({ subsets: ['latin'] })
@@ -37,6 +38,7 @@ const Body = ({children}) => {
        className=" z-50"
       />
     <div className=' select-none overflow-x-hidden    relative scrollbar-track-black scrollbar-thin'>
+      <Message/>
       <NavMenu/>
       <Menu/>
     {sign&&<Container/>}

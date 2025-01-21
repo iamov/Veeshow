@@ -5,23 +5,34 @@ import { useRouter } from 'nextjs-toploader/app';
 import { IoArrowBack } from "react-icons/io5";
 import TitleBar from '@/app/Component/TitleBar';
 import RecentBlock from '@/app/Pages/RecentBlock';
-import Loading from '../Loading';
+import Loading from '../../Loading';
+import Pagination from '@/app/[type]/[genre]/[date]/[sort]/[page]/Component/Pagination';
 
 
-const MainBody = ({id}) => {
+const MainBody = ({page}) => {
 const router = useRouter()
 const [HistoryVideos, setHistoryVidoes] = useState([])
 const [load, setload] = useState(false)
+const [pageNo, setPageNo] = useState(1)
 
   const GET = async ()=>{
     setload(true)
-    const data = await getUserHistory()
-    setHistoryVidoes(data || [])
+    const data = await getUserHistory(page)
+    setHistoryVidoes(data.data || [])
+    setPageNo(data?.totalPages || 1)
     setload(false)
   }
     useEffect(()=>{
       GET()
     },[])
+
+    const Right =()=>{
+      router.push(`/history/${parseInt(page,10) + 1}`)
+    }
+    const Left =()=>{
+      router.push(`/history/${parseInt(page,10) - 1}`)
+  
+    }
 
     if(load)
       return <Loading/>
@@ -33,7 +44,8 @@ const [load, setload] = useState(false)
 
           <div className=' w-[90%] 2xl:w-2/3 pt-20'>
               <div className=' mb-10'><TitleBar title={"My History"}/></div>
-              <div className=' w-full  flex justify-center  flex-wrap'>
+              <Pagination  page={page} noOfPages={pageNo} Right={Right} Left={Left}/>
+              <div className=' w-full mt-2  flex justify-center  flex-wrap'>
               {HistoryVideos.map((e,i)=>{
                 return(
                 <div key={i} className=' m-2 relative z-40 '>
