@@ -77,8 +77,8 @@ const Stream = ({ id, type, season, eps }) => {
     },
     {
       Name: "SERVER 2",
-      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
-      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
+      scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
+      scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
       id: 2,
     },
     {
@@ -89,8 +89,8 @@ const Stream = ({ id, type, season, eps }) => {
     },
     {
       Name: "SERVER 4",
-      scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
-      scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
+      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
+      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
       id: 4,
     },
     {
