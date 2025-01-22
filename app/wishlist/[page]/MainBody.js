@@ -11,7 +11,7 @@ import Pagination from "@/app/[type]/[genre]/[date]/[sort]/[page]/Component/Pagi
 const MainBody = ({page}) => {
   const router = useRouter();
   const [WishVideos, setWishVidoes] = useState([]);
-  const [load, setload] = useState(false)
+  const [load, setload] = useState(true)
   const [pageNo, setPageNo] = useState(1)
   
   const GET = async () => {
