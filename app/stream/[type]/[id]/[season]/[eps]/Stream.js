@@ -163,7 +163,7 @@ const Stream = ({ id, type, season, eps }) => {
         </div>
 
         {/* Dropdown Menu */}
-        <div className=' flex w-full sm:w-fit justify-between items-center'>
+        <div className=' flex w-full sm:w-fit justify-end sm:justify-between items-center'>
           {type == 'tv'&&<div className='relative mr-5'>
           <div
             className='px-4 py-2 font-semibold rounded-md bg-blue-900 flex items-center cursor-pointer'
