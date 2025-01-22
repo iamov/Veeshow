@@ -89,27 +89,33 @@ const Stream = ({ id, type, season, eps }) => {
     },
     {
       Name: "SERVER 4",
-      scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
-      scrSeries: `https://vidsrc.xyz/embed/tv/${id}/${season}-${eps}`,
+      scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
+      scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
       id: 4,
     },
     {
       Name: "SERVER 5",
-      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
-      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
+      scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
+      scrSeries: `https://vidsrc.xyz/embed/tv/${id}/${season}-${eps}`,
       id: 5,
     },
     {
       Name: "SERVER 6",
+      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
+      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
+      id: 6,
+    },
+    {
+      Name: "SERVER 7",
       scrMovie: `https://111movies.com/movie/${id}`,
       scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
-      id: 6,
+      id: 7,
     },
     {
       Name: "NO ADS",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
-      id: 7,
+      id: 8,
     },
   ];
 
