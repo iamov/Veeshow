@@ -77,14 +77,14 @@ const Stream = ({ id, type, season, eps }) => {
     },
     {
       Name: "SERVER 2",
-      scrMovie: `https://vidbinge.dev/embed/movie/${id}`,
-      scrSeries: `https://vidbinge.dev/embed/tv/${id}/${season}/${eps}`,
+      scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
+      scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
       id: 2,
     },
     {
       Name: "SERVER 3",
-      scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
-      scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
+      scrMovie: `https://vidbinge.dev/embed/movie/${id}`,
+      scrSeries: `https://vidbinge.dev/embed/tv/${id}/${season}/${eps}`,
       id: 3,
     },
     {
