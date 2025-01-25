@@ -9,12 +9,13 @@ import { state } from './store';
 import NavMenu from './NavMenu';
 import Menu from './Menu';
 import Message from './Message';
-import { Analytics } from "@vercel/analytics/react"
+import ReactGA from 'react-ga'
 
 
 
 const dosis = Dosis({ subsets: ['latin'] })
-
+const tracking  = "G-K8ZGQ6Z5T8"
+ReactGA.initialize(tracking)
 
 
 
@@ -40,7 +41,6 @@ const Body = ({children}) => {
        className=" z-50"
       />
     <div className=' select-none overflow-x-hidden    relative scrollbar-track-black scrollbar-thin'>
-      <Analytics/>
       <Message/>
       <NavMenu/>
       <Menu/>
