@@ -152,7 +152,7 @@ const Stream = ({ id, type, season, eps }) => {
     return <Loading/>
 
   return (
-    <div className='relative h-[100vh] w-[100vw] flex-col z-50 bg-black flex justify-between items-center'>
+    <div className='h-[100%] fixed top-0 left-0  w-[100vw] flex-col z-50 bg-black flex justify-between items-center'>
       {/* Top Section */}
       <div className='flex sm:flex-row flex-col justify-between w-[90%] mt-8 items-center'>
         <div
@@ -237,7 +237,7 @@ const Stream = ({ id, type, season, eps }) => {
       </div>
 
       {/* Iframe Section */}
-      <div className=' h-[95%] sm:h-[90%] w-[100%]'>
+      <div className=' h-[85%] sm:h-[90%] w-[100%]'>
         <section className='w-full h-full'>
           <iframe
             referrerPolicy="origin"
