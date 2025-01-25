@@ -13,7 +13,7 @@ import TrailerBox from './Comment';
 import Button from '@/app/Component/Button';
 import { useSnapshot } from 'valtio';
 import { state } from '@/app/store';
-
+import ReactGA from 'react-ga4'
 
 const Bodyjs =  ({params}) => {
   const load = useSnapshot(state).wishload
@@ -74,6 +74,7 @@ const Bodyjs =  ({params}) => {
   }
   }
   useEffect(()=>{
+    ReactGA.send({ hitType: "pageview", page: "/detail", title: "Body Page" });
     GetDetails()
   },[])
 

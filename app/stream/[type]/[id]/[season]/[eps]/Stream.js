@@ -6,7 +6,6 @@ import { useRouter } from 'nextjs-toploader/app';
 import Loading from '@/app/Loading';
 import Apicore from '@/app/Api/ApiCore';
 import { History, saveToRecentlyWatched } from '@/app/history';
-import ReactGA from 'react-ga'
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
@@ -127,7 +126,6 @@ const Stream = ({ id, type, season, eps }) => {
   ];
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname)
     GET()
     if(type == 'tv')
     {

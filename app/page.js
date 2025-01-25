@@ -9,7 +9,7 @@ import { useRouter } from 'nextjs-toploader/app';
 import Loading from "./Loading";
 import Navbar from "./Navbar";
 import Recent from "./Recent";
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
   }
 
   useEffect(()=>{
-    ReactGA.pageview(window.location.pathname)
+    ReactGA.send({ hitType: "pageview", page: "/landingpage", title: "Landing Page" });
     getData()
   },[])
 if(loading)

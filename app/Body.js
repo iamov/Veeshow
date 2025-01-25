@@ -9,7 +9,7 @@ import { state } from './store';
 import NavMenu from './NavMenu';
 import Menu from './Menu';
 import Message from './Message';
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 
 
