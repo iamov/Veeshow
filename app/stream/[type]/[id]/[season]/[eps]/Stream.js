@@ -107,18 +107,18 @@ const Stream = ({ id, type, season, eps }) => {
     },
     {
       Name: "SERVER 7",
-      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
-      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
+      scrMovie: `https://111movies.com/movie/${id}`,
+      scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
       id: 7,
     },
     {
-      Name: "SERVER 8",
-      scrMovie: `https://111movies.com/movie/${id}`,
-      scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
+      Name: "NO ADS 1",
+      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
+      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
       id: 8,
     },
     {
-      Name: "NO ADS",
+      Name: "NO ADS 2",
       scrMovie: `https://play2.123embed.net/movie/${id}`,
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
       id: 9,
@@ -156,13 +156,13 @@ const Stream = ({ id, type, season, eps }) => {
       {/* Top Section */}
       <div className='flex sm:flex-row flex-col justify-between w-[90%] mt-8 items-center'>
         <div
-          className='flex mb-3 items-center cursor-pointer'
+          className='flex mb-3 text-sm md:text-base items-center cursor-pointer'
           onClick={() => {               
              window.open("https://poawooptugroo.com/4/8808782")
             router.push(`/details/${type}/${id}/${season}`);
           }}
         >
-          <IoChevronBack className='scale-125 mr-2' />
+          <IoChevronBack className='md:scale-125 mr-2' />
           <p className='font-bold'>Return to site</p>
         </div>
         <div className=' md:inline hidden'>
@@ -170,7 +170,7 @@ const Stream = ({ id, type, season, eps }) => {
         </div>
 
         {/* Dropdown Menu */}
-        <div className=' flex w-full sm:w-fit justify-end sm:justify-between items-center'>
+        <div className=' flex w-full text-sm md:text-base sm:w-fit justify-end sm:justify-between items-center'>
           {type == 'tv'&&<div className='relative mr-5'>
           <div
             className='px-4 py-2 font-semibold rounded-md bg-blue-900 flex items-center cursor-pointer'
@@ -185,7 +185,7 @@ const Stream = ({ id, type, season, eps }) => {
           </div>
           <div
             id="ListDropdown"
-            className='absolute max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400 right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
+            className='absolute max-h-40 sm:max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400 right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
           >
             {arr.map((ep) => (
               <div
@@ -217,7 +217,7 @@ const Stream = ({ id, type, season, eps }) => {
           </div>
           <div
             id="apiDropdown"
-            className='absolute max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400  right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
+            className='absolute max-h-40 sm:max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400  right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
           >
             {StreamApi.map((api) => (
               <div
