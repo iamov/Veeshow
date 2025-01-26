@@ -11,7 +11,7 @@ export async function generateMetadata({params}){
   const data = datas
   const title =  type == "tv"?data?.name:data?.title
   const overview = data.overview
-  const image = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${data?.poster_path}`
+  const image = `https://www.themoviedb.org/t/p/w1280${data?.backdrop_path}`
 return{
   title:{
     default: `${title} `},
