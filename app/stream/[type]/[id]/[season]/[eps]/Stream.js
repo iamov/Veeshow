@@ -173,7 +173,7 @@ const Stream = ({ id, type, season, eps }) => {
         <div className=' flex w-full text-sm md:text-base sm:w-fit justify-end sm:justify-between items-center'>
           {type == 'tv'&&<div className='relative mr-5'>
           <div
-            className='px-4 py-2 font-semibold rounded-md bg-blue-900 flex items-center cursor-pointer'
+            className='px-4 py-2 font-semibold rounded-md bg-black border-[1px] border-white flex items-center cursor-pointer'
             onClick={(e) => {
               e.stopPropagation(); // Prevent accidental iframe clicks
               const dropdown = document.getElementById("ListDropdown");
@@ -185,12 +185,12 @@ const Stream = ({ id, type, season, eps }) => {
           </div>
           <div
             id="ListDropdown"
-            className='absolute max-h-40 sm:max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400 right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
+            className='absolute max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400 right-0 mt-2 w-40 bg-black border-white border-[1px] text-white rounded-md shadow-lg hidden'
           >
             {arr.map((ep) => (
               <div
                 key={ep}
-                className={`px-4 flex item py-2 ${ep == eps && 'bg-gray-600'} hover:bg-gray-600 cursor-pointer`}
+                className={`px-4 flex item py-2 ${ep == eps && 'bg-gray-700'} hover:bg-gray-700 cursor-pointer`}
                 onClick={() => {
                  router.push(`/stream/tv/${id}/${season}/${ep}`)
                   document.getElementById("ListDropdown").style.display = "none"; // Close dropdown
@@ -205,7 +205,7 @@ const Stream = ({ id, type, season, eps }) => {
 
         <div className='relative'>
           <div
-            className={`px-4 py-2 font-semibold rounded-md bg-blue-900 flex items-center cursor-pointer`}
+            className={`px-4 py-2 font-semibold rounded-md bg-black border-white border-[1px] flex items-center cursor-pointer`}
             onClick={(e) => {
               e.stopPropagation(); // Prevent accidental iframe clicks
               const dropdown = document.getElementById("apiDropdown");
@@ -217,12 +217,12 @@ const Stream = ({ id, type, season, eps }) => {
           </div>
           <div
             id="apiDropdown"
-            className='absolute max-h-40 sm:max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-400  right-0 mt-2 w-40 bg-gray-800 text-white rounded-md shadow-lg hidden'
+            className='absolute max-h-60 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-slate-700  right-0 mt-2 w-40 bg-black border-white border-[1px] text-white rounded-md shadow-lg hidden'
           >
             {StreamApi.map((api) => (
               <div
                 key={api.id}
-                className={`px-4 ${api.Name == selectedApi && 'bg-gray-600'} py-2 hover:bg-gray-600 cursor-pointer`}
+                className={`px-4 ${api.Name == selectedApi && 'bg-gray-700'} py-2 hover:bg-gray-700 cursor-pointer`}
                 onClick={() => {
                   setSelectedApi(api.Name);
                   document.getElementById("apiDropdown").style.display = "none"; // Close dropdown
