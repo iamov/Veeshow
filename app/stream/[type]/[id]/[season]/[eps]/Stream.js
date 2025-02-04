@@ -123,6 +123,12 @@ const Stream = ({ id, type, season, eps }) => {
       scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
       id: 9,
     },
+    {
+      Name: "TEST",
+      scrMovie: `https://vidstream.site/embed/movie/${id}`,
+      scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
+      id: 9,
+    },
   ];
 
   useEffect(() => {
