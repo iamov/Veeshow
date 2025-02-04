@@ -69,12 +69,12 @@ const Stream = ({ id, type, season, eps }) => {
 }
   
   const StreamApi = [
-    {
-      Name: "TEST SERVER",
-      scrMovie: `https://vidstream.site/embed/movie/${id}`,
-      scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
-      id: 1,
-    },
+    // {
+    //   Name: "TEST SERVER",
+    //   scrMovie: `https://vidstream.site/embed/movie/${id}`,
+    //   scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
+    //   id: 1,
+    // },
     {
       Name: "SERVER 1",
       scrMovie: `https://moviesapi.club/movie/${id}`,
