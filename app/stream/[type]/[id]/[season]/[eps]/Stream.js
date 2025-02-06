@@ -70,7 +70,7 @@ const Stream = ({ id, type, season, eps }) => {
   
   const StreamApi = [
     {
-      Name: "TEST SERVER",
+      Name: "MAIN SERVER",
       scrMovie: `https://vidstream.site/embed/movie/${id}`,
       scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
       id: 1,
