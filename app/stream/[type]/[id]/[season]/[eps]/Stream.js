@@ -9,7 +9,7 @@ import { History, saveToRecentlyWatched } from '@/app/history';
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
-  const [selectedApi, setSelectedApi] = useState("SERVER 1");
+  const [selectedApi, setSelectedApi] = useState("MAIN SERVER");
   const [list, Setlist] = useState(0)
   const router = useRouter();
   const [arr,setArry] = useState(1) 
