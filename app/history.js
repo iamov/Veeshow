@@ -13,7 +13,6 @@ export const History = async(body)=>{
         headers:{'Content-Type': 'application/json', 'accessToken': token},
         body:JSON.stringify(body)
     })
-    console.log(data)
 }
 catch(error){
     console.log(error)
