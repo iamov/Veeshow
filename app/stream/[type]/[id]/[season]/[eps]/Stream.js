@@ -162,9 +162,9 @@ const Stream = ({ id, type, season, eps }) => {
   return (
     <div className='h-[100%] fixed top-0 left-0  w-[100vw] flex-col z-50 bg-black flex justify-between items-center'>
       {/* Top Section */}
-      <div className='flex  sm:flex-row flex-col justify-between w-[90%] mt-8 items-center'>
+      <div className='flex  sm:flex-row flex-col justify-between w-[90%] mt-4 sm:mt-8 items-center'>
         <div
-          className='flex mb-3 text-2xl md:text-4xl items-center cursor-pointer'
+          className='flex mb-3 text-4xl items-center cursor-pointer'
           onClick={() => {               
              window.open("https://poawooptugroo.com/4/8808782")
             router.push(`/details/${type}/${id}/${season}`);
@@ -203,7 +203,7 @@ const Stream = ({ id, type, season, eps }) => {
                   document.getElementById("ListDropdown").style.display = "none"; // Close dropdown
                 }}
               >
-              <span className=' mr-3'>Episode</span> <span>{ep}</span> 
+              <span className=' mr-3'>EPISODE</span> <span>{ep}</span> 
               </div>
             ))}
           </div>
