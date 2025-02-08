@@ -6,6 +6,7 @@ import { useRouter } from 'nextjs-toploader/app';
 import Loading from '@/app/Loading';
 import Apicore from '@/app/Api/ApiCore';
 import { History, saveToRecentlyWatched } from '@/app/history';
+import { IoArrowBack } from "react-icons/io5";
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
@@ -161,16 +162,15 @@ const Stream = ({ id, type, season, eps }) => {
   return (
     <div className='h-[100%] fixed top-0 left-0  w-[100vw] flex-col z-50 bg-black flex justify-between items-center'>
       {/* Top Section */}
-      <div className='flex sm:flex-row flex-col justify-between w-[90%] mt-8 items-center'>
+      <div className='flex  sm:flex-row flex-col justify-between w-[90%] mt-8 items-center'>
         <div
-          className='flex mb-3 text-sm md:text-base items-center cursor-pointer'
+          className='flex mb-3 text-2xl md:text-4xl items-center cursor-pointer'
           onClick={() => {               
              window.open("https://poawooptugroo.com/4/8808782")
             router.push(`/details/${type}/${id}/${season}`);
           }}
         >
-          <IoChevronBack className='md:scale-125 mr-2' />
-          <p className='font-bold'>Return to site</p>
+          <IoArrowBack />
         </div>
         <div className=' md:inline hidden'>
           {name&&<p className=' text-xl font-bold'>{name}</p>}
