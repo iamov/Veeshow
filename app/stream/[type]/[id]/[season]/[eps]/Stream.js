@@ -187,7 +187,7 @@ const Stream = ({ id, type, season, eps }) => {
               dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
             }}
           >
-            <div className='mr-6 flex items-center '><span className=' mr-2'>Episode</span><span>{eps}</span></div>
+            <div className='mr-6 flex items-center '><span className=' mr-2'>EPISODE</span><span>{eps}</span></div>
             <FaAngleDown />
           </div>
           <div
