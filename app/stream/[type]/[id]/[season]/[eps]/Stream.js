@@ -10,7 +10,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
-  const [selectedApi, setSelectedApi] = useState("MAIN SERVER");
+  const [selectedApi, setSelectedApi] = useState("SERVER 1");
   const [list, Setlist] = useState(0)
   const router = useRouter();
   const [arr,setArry] = useState(1) 
