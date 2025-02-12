@@ -10,7 +10,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
-  const [selectedApi, setSelectedApi] = useState("MAIN SERVER");
+  const [selectedApi, setSelectedApi] = useState("SERVER 1");
   const [list, Setlist] = useState(0)
   const router = useRouter();
   const [arr,setArry] = useState(1) 
@@ -70,12 +70,12 @@ const Stream = ({ id, type, season, eps }) => {
 }
   
   const StreamApi = [
-    {
-      Name: "MAIN SERVER",
-      scrMovie: `https://vidstream.site/embed/movie/${id}`,
-      scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
-      id: 1,
-    },
+    // {
+    //   Name: "MAIN SERVER",
+    //   scrMovie: `https://vidstream.site/embed/movie/${id}`,
+    //   scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
+    //   id: 1,
+    // },
     {
       Name: "SERVER 1",
       scrMovie: `https://moviesapi.club/movie/${id}`,
