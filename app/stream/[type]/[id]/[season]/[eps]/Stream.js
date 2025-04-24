@@ -10,7 +10,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
-  const [selectedApi, setSelectedApi] = useState("MAIN SERVER");
+  const [selectedApi, setSelectedApi] = useState("NO ADS 1");
   const [list, Setlist] = useState(0)
   const router = useRouter();
   const [arr,setArry] = useState(1) 
@@ -71,11 +71,12 @@ const Stream = ({ id, type, season, eps }) => {
   
   const StreamApi = [
     {
-      Name: "MAIN SERVER",
-      scrMovie: `https://vidstream.site/embed/movie/${id}`,
-      scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
-      id: 1,
+      Name: "NO ADS 1",
+      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
+      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
+      id: 9,
     },
+
     {
       Name: "SERVER 1",
       scrMovie: `https://moviesapi.club/movie/${id}`,
@@ -113,16 +114,10 @@ const Stream = ({ id, type, season, eps }) => {
       id: 8,
     },
     {
-      Name: "NO ADS 1",
-      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
-      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
-      id: 9,
-    },
-    {
-      Name: "NO ADS 2",
-      scrMovie: `https://play2.123embed.net/movie/${id}`,
-      scrSeries: `https://play2.123embed.net/tv/${id}/${season}/${eps}`,
-      id: 10,
+      Name: "MAIN SERVER",
+      scrMovie: `https://vidstream.site/embed/movie/${id}`,
+      scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
+      id: 1,
     },
   
   ];
