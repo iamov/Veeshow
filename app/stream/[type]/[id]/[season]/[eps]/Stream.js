@@ -95,12 +95,12 @@ const Stream = ({ id, type, season, eps }) => {
       scrSeries: `https://embed.su/embed/tv/${id}/${season}/${eps}`,
       id: 4,
     },
-    {
-      Name: "SERVER 4",
-      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
-      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
-      id: 6,
-    },
+    // {
+    //   Name: "SERVER 4",
+    //   scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
+    //   scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
+    //   id: 6,
+    // },
     {
       Name: "SERVER 5",
       scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
@@ -112,12 +112,6 @@ const Stream = ({ id, type, season, eps }) => {
       scrMovie: `https://111movies.com/movie/${id}`,
       scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
       id: 8,
-    },
-    {
-      Name: "MAIN SERVER",
-      scrMovie: `https://vidstream.site/embed/movie/${id}`,
-      scrSeries: `https://vidstream.site/embed/tv/${id}/${season}/${eps}`,
-      id: 1,
     },
   
   ];
