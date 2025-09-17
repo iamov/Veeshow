@@ -71,9 +71,9 @@ const Stream = ({ id, type, season, eps }) => {
   
   const StreamApi = [
     {
-      Name: "NO ADS 1",
-      scrMovie: `https://vidsrc.su/embed/movie/${id}`,
-      scrSeries: `https://vidsrc.su/embed/tv/${id}/${season}/${eps}`,
+      Name: "SERVER",
+      scrMovie: `https://vidsrc.wtf/api/1/movie/?id=${id}&color=e01621`,
+      scrSeries: `https://vidsrc.wtf/api/4/tv/?id=${id}&s=${season}&e=${eps}&color=e01621`,
       id: 9,
     },
 
@@ -89,12 +89,12 @@ const Stream = ({ id, type, season, eps }) => {
       scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
       id: 3,
     },
-    {
-      Name: "SERVER 3",
-      scrMovie: `https://embed.su/embed/movie/${id}`,
-      scrSeries: `https://embed.su/embed/tv/${id}/${season}/${eps}`,
-      id: 4,
-    },
+    // {
+    //   Name: "SERVER 3",
+    //   scrMovie: `https://embed.su/embed/movie/${id}`,
+    //   scrSeries: `https://embed.su/embed/tv/${id}/${season}/${eps}`,
+    //   id: 4,
+    // },
     // {
     //   Name: "SERVER 4",
     //   scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
@@ -102,13 +102,13 @@ const Stream = ({ id, type, season, eps }) => {
     //   id: 6,
     // },
     {
-      Name: "SERVER 5",
+      Name: "SERVER 3",
       scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
       scrSeries: `https://vidsrc.xyz/embed/tv/${id}/${season}-${eps}`,
       id: 7,
     },
     {
-      Name: "SERVER 6",
+      Name: "SERVER 4",
       scrMovie: `https://111movies.com/movie/${id}`,
       scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
       id: 8,
