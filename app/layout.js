@@ -1,6 +1,7 @@
 import Body from "./Body";
 
 export const metadata = {
+  manifest:"/manifest.json",
   title:{
     default: 'Letstream || Movie and Entertainment'},
     metadataBase: new URL('https://letstream.site/'),
