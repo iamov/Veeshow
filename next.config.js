@@ -3,9 +3,7 @@ const withPWA = require('next-pwa')({
   register: true,
   skipWaiting: true,
   disable:false,
-  workboxOptions:{
-    disableDevlogs: true
-  }
+
 });
 
 module.exports = withPWA({
