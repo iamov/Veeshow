@@ -14,7 +14,6 @@ const RecentBlock = ({data, passType = ""}) => {
     const addDefaultImg = ev => {
       ev.target.src = "/dfi.png"
    }
-   console.log(data)
   return (
     <LazyLoadComponent effect="blur" className=" w-full"     wrapperProps={{
 style: {transitionDelay: "1s"},
