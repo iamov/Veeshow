@@ -60,7 +60,7 @@ export default function Main({id}) {
         validationSchema={SeriesEditSchema}
         onSubmit={async (values) => {
           try {
-            const res = await fetch(`/Api/admin/editseries?id=${id}`, {
+            const res = await fetch(`/api/admin/editseries?id=${id}`, {
               method: "PATCH", // use PATCH for partial update
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(values),

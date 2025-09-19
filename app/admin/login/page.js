@@ -24,7 +24,7 @@ export default function AdminLoginPage() {
         validationSchema={LoginSchema}
         onSubmit={async (values, { resetForm }) => {
           try {
-            const res = await fetch("/Api/loginadmin", {
+            const res = await fetch("/api/loginadmin", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(values),

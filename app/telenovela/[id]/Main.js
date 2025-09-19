@@ -24,7 +24,7 @@ const Body =  ({id}) => {
     setLoading(true)
     let response;
     try{
-     const res= await fetch(`/Api/getseries?id=${id}`)
+     const res= await fetch(`/api/getseries?id=${id}`)
       response = await res.json()
       if(response.success)
       {

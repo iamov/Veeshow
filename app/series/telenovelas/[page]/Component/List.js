@@ -14,7 +14,7 @@ const [data, setData] = useState([])
 
 
 const getData = async()=>{
-  const res = await fetch(`/Api/listseries?page${page}`)
+  const res = await fetch(`/api/listseries?page${page}`)
    const response = await res.json();
     setData(response.series)
     setPages(response.totalPages)

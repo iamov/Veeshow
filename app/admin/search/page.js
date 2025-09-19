@@ -38,7 +38,7 @@ export default function SearchSeriesPage() {
     const timer = setTimeout(async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/Api/admin/search?title=${query}`);
+        const res = await fetch(`/api/admin/search?title=${query}`);
         const data = await res.json();
 
         if (res.ok) {
@@ -65,7 +65,7 @@ export default function SearchSeriesPage() {
     if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
 
     try {
-      const res = await fetch(`/Api/deleteseries?id=${id}`, {
+      const res = await fetch(`/api/deleteseries?id=${id}`, {
         method: "DELETE",
       });
 
