@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from 'next/navigation'; // Adjust import if needed for your Next.js version
 import { Formik, Form, Field } from 'formik';
-import Apicore from '../../../../api/ApiCore';
+import Apicore from '../../../../ApiCore';
 import MovieBlock from '../../../../Pages/MovieBlock';
 import Pagination from '@/app/[type]/[genre]/[date]/[sort]/[page]/Component/Pagination';
 import Button from '@/app/Component/Button';

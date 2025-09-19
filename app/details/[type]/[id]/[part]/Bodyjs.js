@@ -1,5 +1,5 @@
 "use client"
-import Apicore from '@/app/api/ApiCore'
+import Apicore from '@/app/ApiCore'
 import WishlistButton from '@/app/Component/WishlistButton';
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'nextjs-toploader/app';

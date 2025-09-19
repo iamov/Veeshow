@@ -1,6 +1,6 @@
 import React from 'react'
 import Bodyjs from './Bodyjs'
-import Apicore from '@/app/api/ApiCore'
+import Apicore from '@/app/ApiCore'
 
 export async function generateMetadata({params}){
   const api = new Apicore()

@@ -1,7 +1,7 @@
 'use client'
 import Top from "./Pages/Top";
 import { useEffect, useState } from "react";
-import Apicore from "./api/ApiCore";
+import Apicore from "./ApiCore";
 import TrendingToday from "./Pages/TrendingToday";
 import Footer from "./Footer";
 import Upcoming from "./Pages/Upcoming";

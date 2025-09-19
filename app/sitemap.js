@@ -1,4 +1,4 @@
-import Apicore from "./api/ApiCore";
+import Apicore from "./ApiCore";
 
 export default async function sitemap() {
     const api = new Apicore();
