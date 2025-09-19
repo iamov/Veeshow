@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
               state.signUp = false
               state.role = "admin"
               setTimeout(() => {
-                router.push("/admin/search"); // redirect to admin home
+                router.replace("/admin/search"); // redirect to admin home
               }, 1000);
             } else {
               setMessage(`❌ ${data.message || "Invalid credentials"}`);
