@@ -21,6 +21,7 @@
   "lang": "en-US",
   "name": "Letstream",
   "short_name": "Letstream",
-  "start_url": "https://letstream.site",
+  "start_url": "https://letstream.site/",
+  "scope":"https://letstream.site",
   "description": "Free Movie App"
 }

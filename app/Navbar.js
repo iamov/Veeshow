@@ -42,7 +42,7 @@ const Navbar = ({active}) => {
               <img src='/logologo.png' className={` ${active? 'w-8 sm:w-12':' w-8 sm:w-10 md:w-16'} mr-2`}/>
               <h2 className=' text-xl sm:text-2xl md:text-3xl font-extrabold '>Let's Stream</h2>
             </div>
-            <ul className=' md:flex w-[40%] hidden lg:w-[35%] xl:w-3/12 text-white justify-between font-bold items-center text-lg'>
+            <ul className=' md:flex w-[40%] hidden lg:w-[45%] xl:w-4/12 text-white justify-between font-bold items-center text-lg'>
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out' onClick={()=>{
       router.push(`/`)
     }}>Home</li>
@@ -55,6 +55,9 @@ const Navbar = ({active}) => {
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out'  onClick={()=>{
       router.push(`/tv/16/${previousYear}/1/1`)
     }}>Animes</li>
+     <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out'  onClick={()=>{
+      router.push(`/series/telenovelas/1`)
+    }}>Telenovela</li>
             </ul>
             <div className=' flex items-center text-2xl w-[22%] sm:w-[18%] md:w-[12%] lg:w-[10%] 2xl:w-[8%] 3xl:w-[7%] justify-between'>
                 <div className=' cursor-pointer scale-[120%] hover:scale-[110%] transition-all duration-300 ease-in-out' onClick={()=>{

@@ -1,4 +1,4 @@
-import { getCookies } from "./getCookie"
+import { getCookies, getAdminCookies } from "./getCookie"
 import { state } from "./store"
 
 export const History = async(body)=>{
@@ -88,6 +88,26 @@ export const getUserDetail = async ()=>{
         console.log(error)
     }
 }
+
+export const getAdminDetail = async ()=>{
+    try{
+        const token = await getAdminCookies()
+        if(!token)
+            {
+                return 
+            }
+        const data = await fetch(`/api/getuser`,{
+            method:'GET',
+            headers:{'adminToken': token},
+        })
+        const info = await data.json()
+        return info.data
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
 
 export const DeleteWish = async (body)=>{
     try{

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TitleBar from '../Component/TitleBar'
 import axios from 'axios'
-import Apicore from '../Api/ApiCore'
+import Apicore from '../api/ApiCore'
 import Ads from './Ads'
 import YouTube from 'react-youtube'
 

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import InputBox from './Component/InputBox'
-import Apicore from '@/app/Api/ApiCore'
+import Apicore from '@/app/api/ApiCore'
 import MovieBlock from '@/app/Pages/MovieBlock'
 import Footer from '@/app/Footer'
 import Pagination from './Component/Pagination'

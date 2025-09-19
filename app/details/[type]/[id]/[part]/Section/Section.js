@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Apicore from '@/app/Api/ApiCore'
+import Apicore from '@/app/api/ApiCore'
 import List from './List'
 import { useRouter } from 'nextjs-toploader/app';
 import { FaAngleDown } from "react-icons/fa";

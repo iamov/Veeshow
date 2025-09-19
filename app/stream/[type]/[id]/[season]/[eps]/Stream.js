@@ -4,7 +4,7 @@ import { IoChevronBack } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa";
 import { useRouter } from 'nextjs-toploader/app';
 import Loading from '@/app/Loading';
-import Apicore from '@/app/Api/ApiCore';
+import Apicore from '@/app/api/ApiCore';
 import { History, saveToRecentlyWatched } from '@/app/history';
 import { IoArrowBack } from "react-icons/io5";
 

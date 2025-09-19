@@ -11,6 +11,7 @@ export const state = proxy({
     showmenu:false,
     publicMgs:"",
     alert:false,
-    wishload:false
+    wishload:false,
+    role:""
 })
 

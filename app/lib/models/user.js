@@ -27,6 +27,9 @@ const Wishlist = new Schema({
     },
     season:{
         type:String
+    },
+    url:{
+        type:String
     }
 },{timestamps:true})
 
@@ -57,6 +60,9 @@ const History = new Schema({
     },
     season:{
         type:String
+    },
+    url:{
+        type:String
     }
 },{timestamps:true})
 const User = new Schema({
@@ -70,6 +76,10 @@ const User = new Schema({
     password:{
         type:String
     },
+    role:{
+        type:String
+    }
+    ,
     suspend:{
         type:Boolean
     },
