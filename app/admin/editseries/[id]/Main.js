@@ -8,15 +8,16 @@ import { useRouter } from 'nextjs-toploader/app';
 import { getAdminCookies } from "@/app/getCookie";
 
 const SeriesEditSchema = Yup.object().shape({
-  title: Yup.string().required("Title is required"),
-  description: Yup.string().required("description is required"),
-  genre: Yup.array().of(Yup.string().required("Genre is required")),
-  releaseYear: Yup.number().min(1900).max(new Date().getFullYear()).required("releaseYear is required"),
-  seasons: Yup.number().min(1).default(1).required("seasons is required"),
-  Image: Yup.string().url("Must be a valid URL").required("Image is required"),
-  coverImage: Yup.string().url("Must be a valid URL").required("Image is required"),
-  rating: Yup.number().min(0).max(10).required("rating is required"),
+  title: Yup.string(),
+  description: Yup.string(),
+  genre: Yup.array().of(Yup.string()),
+  releaseYear: Yup.number().min(1900).max(new Date().getFullYear()),
+  seasons: Yup.number().min(1),
+  Image: Yup.string().url("Must be a valid URL"),
+  coverImage: Yup.string().url("Must be a valid URL"),
+  rating: Yup.number().min(0).max(10),
 });
+
 
 
 
