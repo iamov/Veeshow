@@ -40,7 +40,7 @@ export default function CreateSeriesPage() {
   })
 
   if(!show)
-    return <div>error</div>
+    return <div></div>
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white my-5 text-black shadow-md rounded-lg">
