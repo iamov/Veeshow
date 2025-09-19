@@ -20,11 +20,11 @@ export async function generateMetadata({ params }) {
     const series = data.series || {};
 
     return {
-      title: `${series.title || "Telenovela"} - Letstream`,
-      description: series.description || "Watch the latest telenovela episodes on Letstream.",
+      title: `${series.title || "Telenovela"} - Letstream Telenovela`,
+      description: series.description || "Watch the latest telenovela episodes on Letstream with english subtitles and dubs.",
       openGraph: {
         title: `${series.title || "Telenovela"} - Letstream`,
-        description: series.description || "Watch the latest telenovela episodes on Letstream.",
+        description: series.description || "Watch the latest telenovela episodes on Letstream with english subtitles and dubs.",
         url: `https://letstream.site/telenovela/${id}`,
         type: "video.tv_show",
         images: [
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
       twitter: {
         card: "summary_large_image",
         title: `${series.title || "Telenovela"} - Letstream`,
-        description: series.description || "Watch the latest telenovela episodes on Letstream.",
+        description: series.description || "Watch the latest telenovela episodes on Letstream with english subtitles and dubs.",
         images: [series.coverImage || "/opengraph-image.png"],
       },
       alternates: {
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }) {
 
     return {
       title: "Telenovela - Letstream",
-      description: "Watch the latest telenovela episodes on Letstream.",
+      description: "Watch the latest telenovela episodes on Letstream with english subtitles and dubs.",
     };
   }
 }
