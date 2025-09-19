@@ -44,7 +44,7 @@ export default function Main({ id }) {
     }
 
     try {
-      const res = await fetch(`/api/admin/deleteepisode?id=${id}`, {
+      const res = await fetch(`/Api/admin/deleteepisode?id=${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ episodeNumber, season }),
@@ -84,7 +84,7 @@ export default function Main({ id }) {
         validationSchema={EpisodeSchema}
         onSubmit={async (values, { resetForm }) => {
           try {
-            const res = await fetch(`/api/admin/pushepisode?id=${id}`, {
+            const res = await fetch(`/Api/admin/pushepisode?id=${id}`, {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(values),

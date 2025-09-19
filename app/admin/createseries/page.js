@@ -63,8 +63,7 @@ export default function CreateSeriesPage() {
         validationSchema={SeriesSchema}
         onSubmit={async (values, { resetForm }) => {
           try {
-            console.log(values)
-            const res = await fetch("/api/admin/createseries", {
+            const res = await fetch("/Api/admin/createseries", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(values),

@@ -37,7 +37,7 @@ const Menu = () => {
 
 
 const Logout = async () => {
-  const res = await fetch("/api/logout", { method: "POST" });
+  const res = await fetch("/Api/logout", { method: "POST" });
   const data = await res.json();
 
   if (data.success) {
