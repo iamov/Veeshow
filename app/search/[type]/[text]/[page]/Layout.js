@@ -7,6 +7,7 @@ import Apicore from '../../../../ApiCore';
 import MovieBlock from '../../../../Pages/MovieBlock';
 import Pagination from '@/app/[type]/[genre]/[date]/[sort]/[page]/Component/Pagination';
 import Button from '@/app/Component/Button';
+import Block from '@/app/series/telenovelas/[page]/Component/Block';
 const Layout = ({type, texts, page}) => {
   const text = decodeURIComponent(texts)
   const api = new Apicore()
@@ -31,11 +32,25 @@ const Layout = ({type, texts, page}) => {
         return
       }
       setloading(true)
-      const response = await api.get(
+      let response
+
+      if(type != "telenovela")
+      {
+      response = await api.get(
         `/3/search/${type}?query=${text}&include_adult=false&language=en-US&page=${page}`
       );
       setList(response.results || [])
       setPageNo(response?.total_pages || 0)
+      }
+      else{
+        const res = await fetch(`/api/searchtelenovela?title=${text}&page=${page}`);
+        const data = await res.json();
+         if (res.ok) {
+          setList(data.series || []);
+          setPageNo(data?.pagination?.totalPages || 0)
+}
+
+      }
       setloading(false)
     } catch (error) {
       setloading(false)
@@ -101,6 +116,10 @@ const Layout = ({type, texts, page}) => {
                   <Field type="radio" name="types" value="tv" className="mr-2" />
                   TV Show
                 </label>
+                 <label>
+                  <Field type="radio" name="types" value="telenovela" className="mr-2" />
+                  Telenovela
+                </label>
               </div>
   
               <button
@@ -118,10 +137,14 @@ const Layout = ({type, texts, page}) => {
        </div> :
         <div className='  w-[100%] sm:mt-10 '>
           <div className=' flex flex-wrap justify-center'>
-            {list.map((data)=>{
+            {list.map((data, i)=>{
               return(
-                <div key={data.id} className=' mx-2 mb-5'>
+                <div key={i} className=' mx-2 mb-5'>
+                  {type == "telenovela"?
+                  <Block data={data}/>
+                  :
                   <MovieBlock data={data} passType={type}/>
+                  }
                 </div>
               )
             })}
