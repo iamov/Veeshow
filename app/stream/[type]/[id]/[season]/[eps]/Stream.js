@@ -78,28 +78,28 @@ const Stream = ({ id, type, season, eps }) => {
     },
     {
       Name: "SERVER 1",
-      scrMovie: `https://vidsrc.wtf/api/1/movie/?id=${id}&color=e01621`,
-      scrSeries: `https://vidsrc.wtf/api/1/tv/?id=${id}&s=${season}&e=${eps}&color=e01621`,
+      scrMovie: `https://vidlink.pro/movie/${id}`,
+      scrSeries: `https://vidlink.pro/tv/${id}/${season}/${eps}`,
       id: 9,
     },
-    {
-      Name: "SERVER 2",
-      scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
-      scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
-      id: 3,
-    },
+    // {
+    //   Name: "SERVER 2",
+    //   scrMovie: `https://embed.rgshows.me/api/2/movie/?id=${id}`,
+    //   scrSeries: `https://embed.rgshows.me/api/2/tv/?id=${id}&s=${season}&e=${eps}`,
+    //   id: 3,
+    // },
     // {
     //   Name: "SERVER 3",
     //   scrMovie: `https://embed.su/embed/movie/${id}`,
     //   scrSeries: `https://embed.su/embed/tv/${id}/${season}/${eps}`,
     //   id: 4,
     // },
-    // {
-    //   Name: "SERVER 4",
-    //   scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
-    //   scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
-    //   id: 6,
-    // },
+    {
+      Name: "SERVER 2",
+      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
+      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
+      id: 6,
+    },
     {
       Name: "SERVER 3",
       scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,

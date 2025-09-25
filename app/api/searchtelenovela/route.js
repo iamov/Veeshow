@@ -6,9 +6,11 @@ export const GET = async (req) => {
   try {
     await mongoosedb();
 
-    // extract ?title= from query
+    // extract query params
     const { searchParams } = new URL(req.url);
     const title = searchParams.get("title");
+    const page = parseInt(searchParams.get("page") || "1", 10); // default page 1
+    const limit = 20;
 
     if (!title) {
       return NextResponse.json(
@@ -17,12 +19,32 @@ export const GET = async (req) => {
       );
     }
 
-    // partial + case-insensitive search
+    // count total matches
+    const totalSeries = await Telenovela.countDocuments({
+      title: { $regex: title, $options: "i" },
+    });
+
+    // calculate pagination
+    const totalPages = Math.ceil(totalSeries / limit);
+    const skip = (page - 1) * limit;
+
+    // fetch with pagination
     const series = await Telenovela.find({
       title: { $regex: title, $options: "i" },
     })
+      .skip(skip)
+      .limit(limit);
 
-    return NextResponse.json({ success: true, series });
+    return NextResponse.json({
+      success: true,
+      series,
+      pagination: {
+        page,
+        totalPages,
+        totalSeries,
+        perPage: limit,
+      },
+    });
   } catch (err) {
     console.error(err);
     return NextResponse.json(
