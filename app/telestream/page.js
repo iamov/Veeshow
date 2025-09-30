@@ -1,23 +1,33 @@
 "use client";
+
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Loading from "../Loading";
 
-export default function StreamPage() {
+function StreamContent() {
   const searchParams = useSearchParams();
-  const link = searchParams.get("link"); // get ?link=...
+  const link = searchParams.get("link");
 
-  if (!link) {
-    return <div>No link provided</div>;
-  }
+  if (!link) return <div>No link provided</div>;
 
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <iframe
-        src={link}
-        width="100%"
-        height="100%"
-        allowFullScreen
-        className="border-0"
-      ></iframe>
-    </div>
+    <iframe
+      src={link}
+      width="100%"
+      height="100%"
+      className="border-0"
+      allowFullScreen
+    />
   );
 }
+
+export default function TelestreamPage() {
+  return (
+    <Suspense fallback={<div><Loading/></div>}>
+      <StreamContent />
+    </Suspense>
+  );
+}
+
+// 🚨 This tells Next.js not to prerender
+export const dynamic = "force-dynamic";

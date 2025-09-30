@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/watch", "/admin"], // 🚫 block these paths
+        disallow: ["/watch", "/admin", "/telestream", "/stream"], // 🚫 block these paths
       },
     ],
     sitemap: "https://letstream.site/sitemap.xml",
