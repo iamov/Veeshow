@@ -240,10 +240,22 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
         .map((u) => u.trim())
         .filter(Boolean);
 
-      // Last link only
-      const lastUrl = urls[urls.length - 1];
       const startFrom = parseInt(values.currentEpisode, 10) || 0;
+      const lastUrl = urls[urls.length - 1];
       const epNumber = lastUrl ? startFrom + urls.length : null;
+
+      // 🔎 Track duplicates with episode numbers
+      const urlToEpisode = new Map();
+      urls.forEach((u, i) => {
+        if (!urlToEpisode.has(u)) {
+          urlToEpisode.set(u, startFrom + i + 1);
+        }
+      });
+
+      let duplicateMessage = null;
+      if (lastUrl && urlToEpisode.has(lastUrl) && urlToEpisode.get(lastUrl) !== epNumber) {
+        duplicateMessage = `❌ Duplicate of Episode ${urlToEpisode.get(lastUrl)}`;
+      }
 
       return (
         <Form className="space-y-4">
@@ -288,8 +300,15 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
 
           {/* Single Live Preview */}
           {lastUrl && epNumber && (
-            <div className="mt-3 p-2 bg-gray-100 rounded text-sm break-all">
+            <div
+              className={`mt-3 p-2 rounded text-sm break-all ${
+                duplicateMessage ? "bg-red-100 text-red-700" : "bg-gray-100"
+              }`}
+            >
               <span className="font-bold">Episode {epNumber}:</span> {lastUrl}
+              {duplicateMessage && (
+                <p className="font-semibold">{duplicateMessage}</p>
+              )}
             </div>
           )}
 
