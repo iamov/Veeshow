@@ -24,7 +24,7 @@ style: {transitionDelay: "1s"},
       {
       router.push(`/stream/${type}/${data?.id}/${season}/${episode}`)}
       else{
-      router.push(data.url)
+      router.push(`/telestream?link=${data?.url}`)
       }
       } } >
       <img onError={addDefaultImg} className=' w-full h-full object-cover object-center absolute z-10 ' src={data?.url?`${data.poster_path}`:`${Api}${data.poster_path}`} loading='lazy' alt={data.name || data.original_name || data.title}/>

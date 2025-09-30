@@ -14,7 +14,7 @@ function StreamContent() {
   if (!link) return <div></div>;
 
   return (
-    <div className=" h-[100vh] w-[100vw]">
+    <div className=" h-[100dvh] w-[100vw]">
     <div className=" h-[15%] sm:h-[10%] flex items-center">
         <div
                   className='flex ml-5 text-4xl items-center cursor-pointer'
