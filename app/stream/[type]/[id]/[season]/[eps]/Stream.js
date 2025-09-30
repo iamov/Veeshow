@@ -1,6 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { IoChevronBack } from "react-icons/io5";
 import { FaAngleDown } from "react-icons/fa";
 import { useRouter } from 'nextjs-toploader/app';
 import Loading from '@/app/Loading';
