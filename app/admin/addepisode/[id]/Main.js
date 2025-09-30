@@ -62,8 +62,7 @@ export default function Main({ id }) {
     clearMessage();
   };
 
-  // ✅ Function to upload multiple episodes from a list
-  // ✅ Function to upload multiple episodes from a list
+
 const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
   const urls = urlsText.split("\n").map((u) => u.trim()).filter(Boolean);
 
@@ -197,17 +196,16 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
         )}
       </Formik>
 
-    {/* --- Bulk Upload Form --- */}
+   {/* --- Bulk Upload Form --- */}
 <div className="border-t pt-6">
   <h2 className="text-xl font-bold mb-3">Bulk Upload Episodes</h2>
   <Formik
     initialValues={{
       season: 1,
-      currentEpisode: "", // 👈 no default
+      currentEpisode: "",
       urls: "",
     }}
     onSubmit={async (values, { resetForm, setFieldError }) => {
-      // Ensure currentEpisode is provided
       if (!values.currentEpisode || isNaN(values.currentEpisode)) {
         setFieldError("currentEpisode", "❌ Please enter the current episode number.");
         return;
@@ -218,7 +216,7 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
         .map((u) => u.trim())
         .filter(Boolean);
 
-      // 🔎 Find duplicates in input list
+      // 🔎 Find duplicates
       const seen = new Set();
       const duplicates = urls.filter((url) => {
         if (seen.has(url)) return true;
@@ -227,11 +225,8 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
       });
 
       if (duplicates.length > 0) {
-        setFieldError(
-          "urls",
-          `❌ Duplicate links found. Please remove them before uploading.`
-        );
-        return; // stop here
+        setFieldError("urls", "❌ Duplicate links found. Please remove them before uploading.");
+        return;
       }
 
       const startFrom = parseInt(values.currentEpisode, 10);
@@ -240,18 +235,20 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
     }}
   >
     {({ values, handleChange, errors }) => {
-      // 🔎 Compute duplicates for highlighting
       const urls = values.urls
         .split("\n")
         .map((u) => u.trim())
         .filter(Boolean);
 
+      // 🔎 Duplicate detection
       const seen = new Set();
       const duplicates = new Set();
       urls.forEach((url) => {
         if (seen.has(url)) duplicates.add(url);
         else seen.add(url);
       });
+
+      const startFrom = parseInt(values.currentEpisode, 10) || 0;
 
       return (
         <Form className="space-y-4">
@@ -275,17 +272,16 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
               placeholder="Enter current episode..."
             />
             {errors.currentEpisode && (
-              <p className="text-red-600 font-semibold mt-1">
-                {errors.currentEpisode}
-              </p>
+              <p className="text-red-600 font-semibold mt-1">{errors.currentEpisode}</p>
             )}
+            <p className="text-sm text-gray-500">
+              Example: if current episode is 4, first pasted link becomes Episode 5.
+            </p>
           </div>
 
           {/* URLs List */}
           <div>
-            <label className="block font-semibold">
-              Episode URLs (one per line)
-            </label>
+            <label className="block font-semibold">Episode URLs (one per line)</label>
             <textarea
               name="urls"
               value={values.urls}
@@ -296,19 +292,30 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
             {errors.urls && (
               <p className="text-red-600 font-semibold mt-1">{errors.urls}</p>
             )}
-            {urls.length > 0 && duplicates.size > 0 && (
-              <div className="mt-2 text-red-600 text-sm">
-                ⚠️ Duplicate links detected:
-                <ul className="list-disc ml-5">
-                  {[...duplicates].map((dup, idx) => (
-                    <li key={idx} className="break-all">
-                      {dup}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
+
+          {/* Preview */}
+          {urls.length > 0 && (
+            <div className="mt-3">
+              <h3 className="font-semibold mb-2">Preview</h3>
+              <ul className="space-y-1">
+                {urls.map((url, idx) => {
+                  const epNumber = startFrom + idx + 1;
+                  const isDuplicate = duplicates.has(url);
+                  return (
+                    <li
+                      key={idx}
+                      className={`text-sm break-all p-1 rounded ${
+                        isDuplicate ? "bg-red-100 text-red-600" : "bg-gray-100"
+                      }`}
+                    >
+                      <span className="font-bold">Episode {epNumber}:</span> {url}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
 
           {/* Submit */}
           <button
@@ -327,6 +334,7 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
     }}
   </Formik>
 </div>
+
       {message && <p className="mt-4 text-center font-semibold">{message}</p>}
     </div>
   );
