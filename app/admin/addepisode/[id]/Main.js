@@ -206,7 +206,7 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
       urls: "",
     }}
     onSubmit={async (values, { resetForm, setFieldError }) => {
-      if (!values.currentEpisode || isNaN(values.currentEpisode)) {
+      if (values.currentEpisode === "" || isNaN(values.currentEpisode)) {
         setFieldError("currentEpisode", "❌ Please enter the current episode number.");
         return;
       }
