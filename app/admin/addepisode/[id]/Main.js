@@ -196,7 +196,7 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
         )}
       </Formik>
 
-   {/* --- Bulk Upload Form --- */}
+ {/* --- Bulk Upload Form --- */}
 <div className="border-t pt-6">
   <h2 className="text-xl font-bold mb-3">Bulk Upload Episodes</h2>
   <Formik
@@ -240,15 +240,10 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
         .map((u) => u.trim())
         .filter(Boolean);
 
-      // 🔎 Duplicate detection
-      const seen = new Set();
-      const duplicates = new Set();
-      urls.forEach((url) => {
-        if (seen.has(url)) duplicates.add(url);
-        else seen.add(url);
-      });
-
+      // Last link only
+      const lastUrl = urls[urls.length - 1];
       const startFrom = parseInt(values.currentEpisode, 10) || 0;
+      const epNumber = lastUrl ? startFrom + urls.length : null;
 
       return (
         <Form className="space-y-4">
@@ -274,12 +269,9 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
             {errors.currentEpisode && (
               <p className="text-red-600 font-semibold mt-1">{errors.currentEpisode}</p>
             )}
-            <p className="text-sm text-gray-500">
-              Example: if current episode is 4, first pasted link becomes Episode 5.
-            </p>
           </div>
 
-          {/* URLs List */}
+          {/* URLs */}
           <div>
             <label className="block font-semibold">Episode URLs (one per line)</label>
             <textarea
@@ -294,38 +286,17 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
             )}
           </div>
 
-          {/* Preview */}
-          {urls.length > 0 && (
-            <div className="mt-3">
-              <h3 className="font-semibold mb-2">Preview</h3>
-              <ul className="space-y-1">
-                {urls.map((url, idx) => {
-                  const epNumber = startFrom + idx + 1;
-                  const isDuplicate = duplicates.has(url);
-                  return (
-                    <li
-                      key={idx}
-                      className={`text-sm break-all p-1 rounded ${
-                        isDuplicate ? "bg-red-100 text-red-600" : "bg-gray-100"
-                      }`}
-                    >
-                      <span className="font-bold">Episode {epNumber}:</span> {url}
-                    </li>
-                  );
-                })}
-              </ul>
+          {/* Single Live Preview */}
+          {lastUrl && epNumber && (
+            <div className="mt-3 p-2 bg-gray-100 rounded text-sm break-all">
+              <span className="font-bold">Episode {epNumber}:</span> {lastUrl}
             </div>
           )}
 
           {/* Submit */}
           <button
             type="submit"
-            className={`w-full py-2 rounded font-bold ${
-              duplicates.size > 0
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 text-white"
-            }`}
-            disabled={duplicates.size > 0}
+            className="w-full py-2 rounded font-bold bg-blue-600 text-white"
           >
             Upload Episodes
           </button>
@@ -334,6 +305,7 @@ const handleBulkUpload = async (season, urlsText, startFrom = 0) => {
     }}
   </Formik>
 </div>
+
 
       {message && <p className="mt-4 text-center font-semibold">{message}</p>}
     </div>
