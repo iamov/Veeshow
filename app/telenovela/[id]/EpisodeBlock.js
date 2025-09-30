@@ -27,7 +27,7 @@ const EpisodeBlock = ({data, Detail}) => {
         History(historyBody)
         saveToRecentlyWatched(historyBody)
       window.open("https://poawooptugroo.com/4/8808782")
-      router.push(data?.url)
+      router.push(`/telestream?link=${data?.url}`)
     }}>
         <section className=' flex items-center h-full w-full rounded-md overflow-hidden'>
             <div className=' w-40 rounded-md relative h-full  ' >
