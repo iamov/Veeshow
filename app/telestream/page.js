@@ -15,7 +15,7 @@ function StreamContent() {
       src={link}
       width="100%"
       height="100%"
-      className="border-0"
+      className="absolute inset-0 w-full h-full border-0"
       allowFullScreen
     />
   );
