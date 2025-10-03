@@ -14,6 +14,7 @@ const Stream = ({ id, type, season, eps }) => {
   const router = useRouter();
   const [arr,setArry] = useState(1) 
   const [name, setName] = useState()
+  const [anime, setanime] = useState(false)
   
   const [episode, setEpisode] = useState(true)
 
@@ -50,6 +51,9 @@ const Stream = ({ id, type, season, eps }) => {
     try{
       const currentDate = new Date();
         const response = await api.get(`https://api.themoviedb.org/3/tv/${id}/season/${season}?language=en-US`)
+        // const animeresponse = await api.get(`/3/tv/${id}?language=en-US`)
+        // const hasId16 = animeresponse.genres.some(genre => genre.id === 16);
+        // setanime(hasId16)
         const listC =response?.episodes
         const result = listC.filter(item => {
           const airDate = item?.air_date ? new Date(item.air_date) : null;
@@ -69,14 +73,21 @@ const Stream = ({ id, type, season, eps }) => {
 }
   
   const StreamApi = [
-       {
+         {
       Name: "SERVER",
+      scrMovie: `https://vidnest.fun/movie/${id}`,
+      scrSeries: `https://vidnest.fun/tv/${id}/${season}/${eps}`,
+      srcAnime:`https://vidnest.fun/anime/${id}/${eps}/SUB`,
+      id: 1,
+    },
+       {
+      Name: "SERVER 1",
       scrMovie: `https://moviesapi.club/movie/${id}`,
       scrSeries: `https://moviesapi.club/tv/${id}-${season}-${eps}`,
       id: 2,
     },
     {
-      Name: "SERVER 1",
+      Name: "SERVER 2",
       scrMovie: `https://vidlink.pro/movie/${id}`,
       scrSeries: `https://vidlink.pro/tv/${id}/${season}/${eps}`,
       id: 9,
@@ -94,19 +105,19 @@ const Stream = ({ id, type, season, eps }) => {
     //   id: 4,
     // },
     {
-      Name: "SERVER 2",
+      Name: "SERVER 3",
       scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
       scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
       id: 6,
     },
     {
-      Name: "SERVER 3",
+      Name: "SERVER 4",
       scrMovie: `https://vidsrc.xyz/embed/movie/${id}`,
       scrSeries: `https://vidsrc.xyz/embed/tv/${id}/${season}-${eps}`,
       id: 7,
     },
     {
-      Name: "SERVER 4",
+      Name: "SERVER 5",
       scrMovie: `https://111movies.com/movie/${id}`,
       scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
       id: 8,
