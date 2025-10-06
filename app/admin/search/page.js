@@ -65,7 +65,7 @@ export default function SearchSeriesPage() {
     if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
 
     try {
-      const res = await fetch(`/api/deleteseries?id=${id}`, {
+      const res = await fetch(`/api/admin/deleteseries?id=${id}`, {
         method: "DELETE",
       });
 
