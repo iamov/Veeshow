@@ -36,6 +36,8 @@ export async function generateMetadata({ params }) {
           },
         ],
       },
+        keywords:['english telenovela','english telemundo','telenovela dub','telenovela english dub', 'telenovela english','telenovela sub', 'telenovela english sub','telenovela english subtitle', 'telenovela subtitle','spanish series','telemundo' ,'movie streaming',"download spanish series","download second chance","download telenovalas","download telenovalas with subtitle"]
+      ,
       twitter: {
         card: "summary_large_image",
         title: `${series.title || "Telenovela"} - Letstream`,
