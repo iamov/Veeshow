@@ -7,7 +7,6 @@ import { saveToRecentlyWatched } from '@/app/history';
 
 const EpisodeBlock = ({data, Detail}) => {
         const router = useRouter()
-        console.log(Detail)
         const historyBody = {
         id:Detail?._id,
         media_type:"telenovela",

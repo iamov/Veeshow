@@ -6,7 +6,7 @@ import Footer from '@/app/Footer';
 import Section from './Section';
 import Loading from '@/app/Loading';
 import { IoArrowBack } from "react-icons/io5";
-import { getWishlistId, WishList } from '@/app/history';
+import { getWishlistId, History, WishList } from '@/app/history';
 import Button from '@/app/Component/Button';
 import { useSnapshot } from 'valtio';
 import { state } from '@/app/store';
@@ -50,13 +50,16 @@ const Body =  ({id}) => {
   if(loading)
     return <div><Loading/></div>
   const historyBody = {
-    id:Detail?._id,
-    media_type:"telenovela",
-    poster_path:Detail?.Image,
-    title:Detail?.title,
-    rating:Detail?.rating,
-    season:'1',
-    episode:'1'
+        id:Detail?._id,
+        media_type:"telenovela",
+        poster_path:Detail?.Image,
+        name:Detail?.title,
+        original_name:Detail?.title,
+        title:Detail?.title,
+        vote_average:Detail?.rating,
+        season:Detail?.seasons,
+        episode:'1',
+        url:Detail?.episodes[0].url
   }
   const PUSH = async()=>{
     const info = await WishList(historyBody)
@@ -102,6 +105,7 @@ const Body =  ({id}) => {
             </div>
            {Detail?.episodes[0]?.url && <div className=' flex sm:flex-row flex-col justify-center items-center cursor-pointer'>
             <div onClick={()=>{
+                History(historyBody)
                 window.open("https://poawooptugroo.com/4/8808782")
                 router.push(Detail?.episodes[0].url)
               }}><Button title={"Stream Movie"}/></div>
