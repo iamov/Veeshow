@@ -46,11 +46,6 @@ const Logout = async () => {
 };
 
 
-  function capitalizeFirstLetter(text) {
-    if (!text) return text; 
-    return text.charAt(0).toUpperCase() + text.slice(1);
-  }
-
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
 
