@@ -6,7 +6,7 @@ import Footer from '@/app/Footer';
 import Section from './Section';
 import Loading from '@/app/Loading';
 import { IoArrowBack } from "react-icons/io5";
-import { getWishlistId, History, WishList } from '@/app/history';
+import { getWishlistId, History, saveToRecentlyWatched, WishList } from '@/app/history';
 import Button from '@/app/Component/Button';
 import { useSnapshot } from 'valtio';
 import { state } from '@/app/store';
@@ -106,6 +106,7 @@ const Body =  ({id}) => {
            {Detail?.episodes[0]?.url && <div className=' flex sm:flex-row flex-col justify-center items-center cursor-pointer'>
             <div onClick={()=>{
                 History(historyBody)
+                saveToRecentlyWatched(historyBody)
                 window.open("https://poawooptugroo.com/4/8808782")
                 router.push(Detail?.episodes[0].url)
               }}><Button title={"Stream Movie"}/></div>
