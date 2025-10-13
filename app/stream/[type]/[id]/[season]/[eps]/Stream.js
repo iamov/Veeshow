@@ -80,17 +80,17 @@ const Stream = ({ id, type, season, eps }) => {
       srcAnime:`https://vidnest.fun/anime/${id}/${eps}/SUB`,
       id: 1,
     },
-       {
+            {
       Name: "SERVER 1",
-      scrMovie: `https://moviesapi.club/movie/${id}`,
-      scrSeries: `https://moviesapi.club/tv/${id}-${season}-${eps}`,
-      id: 2,
-    },
-        {
-      Name: "SERVER 2",
       scrMovie: `https://player.vidplus.to/embed/movie/${id}?autoplay=false&poster=true&title=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fletstream.site%2Flogologo.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       scrSeries: `https://player.vidplus.to/embed/tv/${id}/${season}/${eps}?autoplay=false&autonext=false&nextbutton=false&poster=true&title=true&watchparty=false&chromecast=true&episodelist=false&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fletstream.site%2Flogologo.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       id: 3,
+    },
+       {
+      Name: "SERVER 2",
+      scrMovie: `https://moviesapi.club/movie/${id}`,
+      scrSeries: `https://moviesapi.club/tv/${id}-${season}-${eps}`,
+      id: 2,
     },
     {
       Name: "SERVER 3",
