@@ -82,8 +82,8 @@ const Stream = ({ id, type, season, eps }) => {
     },
             {
       Name: "SERVER 1",
-      scrMovie: `https://player.vidplus.to/embed/movie/${id}?autoplay=false&poster=true&title=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fletstream.site%2Flogologo.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
-      scrSeries: `https://player.vidplus.to/embed/tv/${id}/${season}/${eps}?autoplay=false&autonext=false&nextbutton=false&poster=true&title=true&watchparty=false&chromecast=true&episodelist=false&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&logourl=https%3A%2F%2Fletstream.site%2Flogologo.png&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      scrMovie: `https://player.vidplus.to/embed/movie/${id}??autoplay=true&poster=true&title=true&watchparty=false&chromecast=true&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      scrSeries: `https://player.vidplus.to/embed/tv/${id}/${season}/${eps}?autoplay=true&autonext=false&nextbutton=false&poster=true&title=true&watchparty=false&chromecast=true&episodelist=false&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       id: 3,
     },
        {
