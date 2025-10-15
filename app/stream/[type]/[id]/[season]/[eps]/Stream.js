@@ -192,6 +192,7 @@ const Stream = ({ id, type, season, eps }) => {
                 key={ep}
                 className={`px-4 flex item py-2 ${ep == eps && 'bg-gray-700'} hover:bg-gray-700 cursor-pointer`}
                 onClick={() => {
+                 window.open("https://poawooptugroo.com/4/8808782")
                  router.push(`/stream/tv/${id}/${season}/${ep}`)
                   document.getElementById("ListDropdown").style.display = "none"; // Close dropdown
                 }}
