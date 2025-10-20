@@ -29,6 +29,7 @@ const Body =  ({id}) => {
       if(response.success)
       {
         setDetail(response.series)
+        console.log(response.series)
       }
   
     const wishlistId = await getWishlistId()
@@ -103,7 +104,7 @@ const Body =  ({id}) => {
             <div className='text-center mb-10 font-medium  px-3 text-lg h-20 overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-red-400'>
               <p>{Detail.description}</p>
             </div>
-           {Detail?.episodes[0]?.url && <div className=' flex sm:flex-row flex-col justify-center items-center cursor-pointer'>
+           {Detail?.status != "coming soon"? <div className=' flex sm:flex-row flex-col justify-center items-center cursor-pointer'>
             <div onClick={()=>{
                 History(historyBody)
                 saveToRecentlyWatched(historyBody)
@@ -111,21 +112,18 @@ const Body =  ({id}) => {
                 router.push(Detail?.episodes[0].url)
               }}><Button title={"Stream Movie"}/></div>
               
-              {/* <>
-              {load?
-              <div className=' w-8 h-8 border-white border-[2px] rounded-full border-l-0 animate-spin sm:ml-20'></div>:<>{(wishlistArray.includes(id) || wishshow)  ||
-              <><div className=' sm:ml-16 mt-5 sm:mt-0 '  onClick={()=>{
-              PUSH()
-              }}><WishlistButton/></div></>}</>}</> */}
+              <>
+              {Detail?.status == "ongoing"?
+              <div className=' w-40 rotate-[16deg] sm:ml-5 '><img src='/progress.png'/></div>:<div className=' w-40 rotate-12 '><img src='/completed.png'/></div>}</> 
 
 
-            </div>}
+            </div>:<div className=' w-40 '><img src='/nota.png'/></div>}
           </div>
         </section>
       </div>
       </div>
       <div className=' flex justify-start  w-[100%] sm:w-[90%] xl:w-2/3'>
-       <Section Detail={Detail} id={id} />
+       {Detail?.status != "coming soon" &&<Section Detail={Detail} id={id} />}
       </div>
       <div className=' mt-10 w-full'>
         <Footer/>
