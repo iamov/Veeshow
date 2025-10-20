@@ -73,19 +73,20 @@ const Stream = ({ id, type, season, eps }) => {
 }
   
   const StreamApi = [
-         {
+           {
       Name: "SERVER",
+      scrMovie: `https://player.vidplus.to/embed/movie/${id}??autoplay=true&poster=true&title=true&watchparty=false&chromecast=true&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      scrSeries: `https://player.vidplus.to/embed/tv/${id}/${season}/${eps}?autoplay=true&autonext=false&nextbutton=false&poster=true&title=true&watchparty=false&chromecast=true&episodelist=false&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
+      id: 3,
+    },
+         {
+      Name: "SERVER 1",
       scrMovie: `https://vidnest.fun/movie/${id}`,
       scrSeries: `https://vidnest.fun/tv/${id}/${season}/${eps}`,
       srcAnime:`https://vidnest.fun/anime/${id}/${eps}/SUB`,
       id: 1,
     },
-            {
-      Name: "SERVER 1",
-      scrMovie: `https://player.vidplus.to/embed/movie/${id}??autoplay=true&poster=true&title=true&watchparty=false&chromecast=true&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
-      scrSeries: `https://player.vidplus.to/embed/tv/${id}/${season}/${eps}?autoplay=true&autonext=false&nextbutton=false&poster=true&title=true&watchparty=false&chromecast=true&episodelist=false&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
-      id: 3,
-    },
+  
        {
       Name: "SERVER 2",
       scrMovie: `https://moviesapi.club/movie/${id}`,
