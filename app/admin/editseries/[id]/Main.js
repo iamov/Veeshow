@@ -9,6 +9,7 @@ import { getAdminCookies } from "@/app/getCookie";
 
 const SeriesEditSchema = Yup.object().shape({
   title: Yup.string(),
+  status: Yup.string().oneOf(["ongoing", "completed", "coming soon"]),
   description: Yup.string(),
   genre: Yup.array().of(Yup.string()),
   releaseYear: Yup.number().min(1900).max(new Date().getFullYear()),
@@ -24,7 +25,6 @@ export default function Main({ id }) {
   const [initialValues, setInitialValues] = useState(null);
   const router = useRouter();
 
-  // ✅ Check admin cookie
   const GET = async () => {
     const cookie = await getAdminCookies();
     if (cookie) {
@@ -34,15 +34,14 @@ export default function Main({ id }) {
     }
   };
 
-  // ✅ Fetch series info
   const fetchSeries = async () => {
     try {
       const res = await fetch(`/api/getseries?id=${id}`);
       const data = await res.json();
       if (res.ok && data.series) {
-        // Prefill form with existing data
         setInitialValues({
           title: data.series.title || "",
+          status: data.series.status || "ongoing",
           description: data.series.description || "",
           genre: data.series.genre?.length ? data.series.genre : [""],
           releaseYear: data.series.releaseYear || "",
@@ -85,7 +84,6 @@ export default function Main({ id }) {
         validationSchema={SeriesEditSchema}
         onSubmit={async (values) => {
           try {
-            // 👉 Only send changed fields
             const updates = {};
             for (let key in values) {
               if (values[key] !== initialValues[key]) {
@@ -123,6 +121,21 @@ export default function Main({ id }) {
               <label className="block font-semibold">Title</label>
               <Field name="title" className="w-full border p-2 rounded" />
               <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
+            </div>
+
+            {/* Status */}
+            <div>
+              <label className="block font-semibold">Status</label>
+              <Field
+                as="select"
+                name="status"
+                className="w-full border p-2 rounded bg-white"
+              >
+                <option value="ongoing">Ongoing</option>
+                <option value="completed">Completed</option>
+                <option value="coming soon">Coming Soon</option>
+              </Field>
+              <ErrorMessage name="status" component="div" className="text-red-500 text-sm" />
             </div>
 
             {/* Description */}

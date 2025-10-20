@@ -8,6 +8,7 @@ const EpisodeSchema = new Schema({
 
 const TelenovelaSchema = new Schema({
   title: { type: String, required: true },
+  status:{type: String, required: true, default: "coming soon" },
   description: { type: String },
   genre: [{ type: String }], // e.g. ["Drama", "Romance"]
   releaseYear: { type: Number },
