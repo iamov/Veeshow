@@ -28,7 +28,7 @@ export const POST = async(req)=>{
             const token = JWT.sign({ id }, process.env.DB_JWTS);
         (await cookies()).set('accessToken', token,{
             httpOnly: true,
-            maxAge: 30 * 24 * 60 * 60,
+            maxAge: 60 * 30 * 24 * 60 * 60,
             sameSite: "strict"
         })
         const userdata = {
