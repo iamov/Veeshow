@@ -60,7 +60,7 @@ const Body =  ({id}) => {
         vote_average:Detail?.rating,
         season:Detail?.seasons,
         episode:'1',
-        url:Detail?.episodes[0].url
+        url:Detail?.episodes[0]?.url
   }
   const PUSH = async()=>{
     const info = await WishList(historyBody)
@@ -109,7 +109,7 @@ const Body =  ({id}) => {
                 History(historyBody)
                 saveToRecentlyWatched(historyBody)
                 window.open("https://poawooptugroo.com/4/8808782")
-                router.push(Detail?.episodes[0].url)
+                router.push(Detail?.episodes[0]?.url)
               }}><Button title={"Stream Movie"}/></div>
               
               <>
