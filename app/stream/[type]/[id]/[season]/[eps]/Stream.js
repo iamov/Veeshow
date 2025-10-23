@@ -81,17 +81,18 @@ const Stream = ({ id, type, season, eps }) => {
     },
          {
       Name: "SERVER 1",
-      scrMovie: `https://vidnest.fun/movie/${id}`,
-      scrSeries: `https://vidnest.fun/tv/${id}/${season}/${eps}`,
-      srcAnime:`https://vidnest.fun/anime/${id}/${eps}/SUB`,
-      id: 1,
+      scrMovie: `https://moviesapi.club/movie/${id}`,
+      scrSeries: `https://moviesapi.club/tv/${id}-${season}-${eps}`,
+      id: 2,
+     
     },
   
        {
       Name: "SERVER 2",
-      scrMovie: `https://moviesapi.club/movie/${id}`,
-      scrSeries: `https://moviesapi.club/tv/${id}-${season}-${eps}`,
-      id: 2,
+      scrMovie: `https://vidnest.fun/movie/${id}`,
+      scrSeries: `https://vidnest.fun/tv/${id}/${season}/${eps}`,
+      srcAnime:`https://vidnest.fun/anime/${id}/${eps}/SUB`,
+      id: 1,
     },
     {
       Name: "SERVER 3",
