@@ -110,7 +110,7 @@ const Body =  ({id}) => {
                 saveToRecentlyWatched(historyBody)
                 window.open("https://poawooptugroo.com/4/8808782")
                 router.push(Detail?.episodes[0]?.url)
-              }}><Button title={"Stream Movie"}/></div>
+              }}><Button title={"Stream/Download"}/></div>
               
               <>
               {Detail?.status == "ongoing"?
