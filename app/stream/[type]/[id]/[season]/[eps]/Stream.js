@@ -46,6 +46,16 @@ const Stream = ({ id, type, season, eps }) => {
       History(historyBody)
       saveToRecentlyWatched(historyBody)
   }
+
+  const Download =()=>{
+    if(type == 'movie'){
+     
+      window.open(`https://dl.vidsrc.vip/movie/${id}`, '_blank');
+    }
+    else{
+       window.open(`https://dl.vidsrc.vip/tv/${id}/${season}/${eps}`, '_blank');
+    }
+  }
   const GetSeason = async()=>{
     setEpisode(true)
     try{
@@ -180,10 +190,13 @@ const Stream = ({ id, type, season, eps }) => {
         </div>
 
         {/* Dropdown Menu */}
-        <div className=' flex w-full text-sm md:text-base sm:w-fit justify-end sm:justify-between items-center'>
-          {type == 'tv'&&<div className='relative mr-5'>
+        <div className=' flex w-full text-xs sm:text-sm md:text-base sm:w-fit justify-between flex-wrap sm:justify-between items-center'>
+        <div>
+          <div className='px-2 sm:px-4 py-2 font-semibold rounded-md sm:mr-5 bg-black border-[1px] border-white flex items-center cursor-pointer' onClick={Download}>DOWNLOAD</div>
+        </div>
+          {type == 'tv'&&<div className='relative  sm:mr-5'>
           <div
-            className='px-4 py-2 font-semibold rounded-md bg-black border-[1px] border-white flex items-center cursor-pointer'
+            className='px-2 sm:px-4 py-2 font-semibold rounded-md bg-black border-[1px] border-white flex items-center cursor-pointer'
             onClick={(e) => {
               e.stopPropagation(); // Prevent accidental iframe clicks
               const dropdown = document.getElementById("ListDropdown");
@@ -200,7 +213,7 @@ const Stream = ({ id, type, season, eps }) => {
             {arr.map((ep) => (
               <div
                 key={ep}
-                className={`px-4 flex item py-2 ${ep == eps && 'bg-gray-700'} hover:bg-gray-700 cursor-pointer`}
+                className={`px-2 sm:px-4 flex item py-2 ${ep == eps && 'bg-gray-700'} hover:bg-gray-700 cursor-pointer`}
                 onClick={() => {
                  window.open("https://poawooptugroo.com/4/8808782")
                  router.push(`/stream/tv/${id}/${season}/${ep}`)
