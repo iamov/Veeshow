@@ -44,9 +44,9 @@ function StreamContent() {
         {/* Download Button */}
           <button
           onClick={handleDownload}
-          className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all"
+          className="px-2 sm:px-4 py-2 font-semibold rounded-md sm:mr-5 bg-black border-[1px] border-white flex items-center cursor-pointer"
         >
-          Download
+          DOWNLOAD
         </button>
       </div>
 
