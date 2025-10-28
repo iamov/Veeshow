@@ -20,17 +20,21 @@ export default function Home() {
   const [Popular, setPopular] = useState([])
   const [Trailer, setTrailer] = useState([])
   const [Onair, setOnair] = useState([])
+  const [Ks, setKs] = useState([])
   const [loading, setLoading] = useState(true)
+  const currentYear = new Date().getFullYear();
   const getData = async ()=>{
     try{
       setLoading(true)
       const response = await api.get('/3/trending/movie/day?language=en-US')
+      const kseries = await api.get(`/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=ko-KR&page=1&sort_by=popularity.desc&with_origin_country=KR&without_genres=10764,99,10767&first_air_date_year=${currentYear}`)
       const series = await api.get('/3/trending/tv/day?language=en-US')
       const popular = await api.get('/3/discover/tv?include_adult=false&language=en-US&page=1&sort_by=vote_average.desc&vote_count.gte=200')
       const air = await api.get('/3/movie/top_rated?language=en-US&page=1')
 
       const upcoming = await api.get('/3/movie/upcoming?language=en-US&page=1')
       setBackgroundList(response?.results)
+      setKs(kseries?.results)
       setSeries(series?.results)
       setPopular(popular?.results)
       setTrailer(upcoming?.results)
@@ -65,6 +69,9 @@ if(loading)
      </div>
      <div className="mt-10 md:mt-14 min-h-80 md:min-h-96">
      <TrendingToday BackgroundList={Series} Title={"Series Today"} type={'tv'}/>
+     </div>
+      <div className="mt-10 md:mt-14 min-h-80 md:min-h-96">
+     <TrendingToday BackgroundList={Ks} Title={"K Series"} type={'tv'}/>
      </div>
      <div className="mt-10 md:mt-14 min-h-80 md:min-h-96">
      <TrendingToday BackgroundList={Popular} Title={"Popular List"} type={'tv'}/>
