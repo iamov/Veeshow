@@ -116,10 +116,10 @@ const Layout = ({type, texts, page}) => {
                   <Field type="radio" name="types" value="tv" className="mr-2" />
                   TV Show
                 </label>
-                 <label>
+                 {/* <label>
                   <Field type="radio" name="types" value="telenovela" className="mr-2" />
                   Telenovela
-                </label>
+                </label> */}
               </div>
   
               <button
