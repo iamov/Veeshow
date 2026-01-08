@@ -1,4 +1,5 @@
 export default function robots() {
+  const baseURL = process.env.NEXT_PUBLIC_URL
   return {
     rules: [
       {
@@ -7,6 +8,6 @@ export default function robots() {
         disallow: ["/watch", "/admin", "/telestream", "/stream"], // 🚫 block these paths
       },
     ],
-    sitemap: "https://letstream.site/sitemap.xml",
+    sitemap: `${baseURL}/sitemap.xml`,
   };
 }
