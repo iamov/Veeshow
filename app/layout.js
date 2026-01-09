@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className=" scrollbar-thin scrollbar-track-black scrollbar-thumb-white select-none" suppressHydrationWarning>
-         <head><meta name="monetag" content="e857e807da9f39e755e3c7edc61a96e1"/>
+         <head><meta name="monetag" content="f812d08ef1bb5d01aaa6bdb313c1d2e4"/>
          </head>
       <Body children={children}/>
     </html>
