@@ -14,7 +14,7 @@ import ReactGA from 'react-ga4'
 
 
 const dosis = Dosis({ subsets: ['latin'] })
-const tracking  = "GTM-PBB3SNNR"
+const tracking  = "G-7YGWTWFNZW"
 ReactGA.initialize(tracking)
 
 
