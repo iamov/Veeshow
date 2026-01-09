@@ -19,7 +19,7 @@ const RecentBlock = ({data, passType = ""}) => {
 style: {transitionDelay: "1s"},
 }}>
     <div  role="img" aria-label="movie image" title="movie image"  className=' rounded-lg cursor-pointer overflow-hidden w-36 sm:w-48 h-60 sm:h-72  group relative ' onClick={()=>{
-      window.open("https://poawooptugroo.com/4/8808782")
+      window.open("https://otieu.com/4/10438662")
       if(data.media_type != "telenovela")
       {
       router.push(`/stream/${type}/${data?.id}/${season}/${episode}`)}

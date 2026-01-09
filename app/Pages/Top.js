@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from '../Component/Button';
 import InfoButton from '../Component/InfoButton';
 import { useRouter } from 'nextjs-toploader/app';
-import { History, saveToRecentlyWatched } from '../history';
+
 import { truncateText } from '../Text';
 
 const Top = ({ BackgroundList }) => {
@@ -48,7 +48,7 @@ const Top = ({ BackgroundList }) => {
             </div>
             <div className=' flex items-center flex-col md:flex-row '>
                 <section className=' md:mr-10 mb-5 md:mb-0 cursor-pointer' onClick={()=>{
-                  window.open("https://poawooptugroo.com/4/8808782")
+                  window.open("https://otieu.com/4/10438662")
                   router.push(`/stream/movie/${BackgroundList[currentIndex]?.id}/1/1`)
                 }}><Button title={'Play/Download'}/></section>
                 <section className=' cursor-pointer'  onClick={()=>{

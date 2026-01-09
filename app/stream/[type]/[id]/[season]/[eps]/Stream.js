@@ -179,7 +179,7 @@ const Stream = ({ id, type, season, eps }) => {
         <div
           className='flex mb-3 text-4xl items-center cursor-pointer'
           onClick={() => {               
-             window.open("https://poawooptugroo.com/4/8808782")
+             window.open("https://otieu.com/4/10438662")
             router.push(`/details/${type}/${id}/${season}`);
           }}
         >
