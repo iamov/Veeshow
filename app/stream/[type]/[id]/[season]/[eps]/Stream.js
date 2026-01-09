@@ -6,6 +6,7 @@ import Loading from '@/app/Loading';
 import Apicore from '@/app/ApiCore';
 import { History, saveToRecentlyWatched } from '@/app/history';
 import { IoArrowBack } from "react-icons/io5";
+import Popup from '@/app/Popup';
 
 const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore()
@@ -14,7 +15,7 @@ const Stream = ({ id, type, season, eps }) => {
   const router = useRouter();
   const [arr,setArry] = useState(1) 
   const [name, setName] = useState()
-  const [showAlert, setShowAlert] = useState(true);
+  
   
   const [episode, setEpisode] = useState(true)
 
@@ -175,25 +176,7 @@ const Stream = ({ id, type, season, eps }) => {
   return (
     <div className='h-[100%] fixed top-0 left-0  w-[100vw] flex-col z-50 bg-black flex justify-between items-center'>
       {/* Top Section */}
-      {showAlert && (
-  <div className=" w-screen z-[60] bg-red-600 text-white">
-    <div className="flex items-center justify-between px-4 py-3">
-      <div  className=' w-full flex justify-center items-center'>
-      <p className="text-sm sm:text-xl font-semibold">
-       <span className=' mr-1'> ⚠️</span> IF VIDEO DOESN'T PLAY, TRY SWITCHING SERVER
-      </p>
-      </div>
-      <div  className=' w- flex justify-end'>
-      <button
-        onClick={() => setShowAlert(false)}
-        className="ml-4 px-3 py-1 text-sm font-bold bg-black/30 hover:bg-black/50 rounded"
-      >
-        ✕
-      </button>
-      </div>
-    </div>
-  </div>
-)}
+     <Popup words={"IF VIDEO DOESN'T PLAY, TRY SWITCHING SERVER"}/>
       <div className='flex  sm:flex-row flex-col justify-between w-[90%] mt-4 sm:mt-8 items-center'>
         <div
           className='flex mb-3 text-4xl items-center cursor-pointer'

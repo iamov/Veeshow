@@ -10,6 +10,7 @@ import Loading from "./Loading";
 import Navbar from "./Navbar";
 import Recent from "./Recent";
 import ReactGA from 'react-ga4'
+import Popup from "./Popup";
 
 
 export default function Home() {
@@ -60,6 +61,7 @@ if(loading)
 
   return (
     <div className="w-[100vw] relative  ">
+      <Popup words={"USE ADS-BLOCK FOR EASE OF USE"}/>
        <Navbar/>
      <Top BackgroundList={BackgroundList}/>
      <section className=" pb-5 md:pb-20 -mt-20 sm:-mt-32">
