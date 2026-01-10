@@ -1,5 +1,5 @@
 export default function robots() {
-  const baseURL = process.env.NEXT_PUBLIC_URL
+  const baseURL = process.env.NEXT_PUBLIC_URL || "https://screenopps.com"
   return {
     rules: [
       {

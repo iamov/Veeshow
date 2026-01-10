@@ -3,7 +3,7 @@ import Apicore from "./ApiCore";
 export const dynamic = "force-dynamic"; // 👈 add this line
 
 export default async function sitemap() {
-  const baseURL = process.env.NEXT_PUBLIC_URL
+  const baseURL = process.env.NEXT_PUBLIC_URL || "https://screenopps.com"
   const api = new Apicore();
   const url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
   const url1 = "https://api.themoviedb.org/3/trending/tv/day?language=en-US";
