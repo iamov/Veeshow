@@ -134,7 +134,7 @@ const Bodyjs =  ({params}) => {
                 return <p key={data.id} className=' font-semibold mr-3 px-2 whitespace-nowrap bg-red-900 py-1 mb-1 rounded-sm'>{data.name}</p>
               })}
             </div>
-            <div className='text-center mb-10 font-medium  px-3 text-lg h-20 overflow-y-scroll scrollbar-thin scrollbar-track-transparent scrollbar-thumb-red-400'>
+            <div className='text-center mb-10 font-medium  px-3 text-lg h-20 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-red-400'>
               <p>{Detail.overview}</p>
             </div>
             <div className=' flex sm:flex-row flex-col justify-center items-center cursor-pointer'>
