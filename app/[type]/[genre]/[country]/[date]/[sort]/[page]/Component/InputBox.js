@@ -11,6 +11,7 @@ const InputBox = ({params}) => {
 
   const router = useRouter()
   const currentYear = new Date().getFullYear();
+  const country = params.country
   const years = []; // Array to hold years
   const type = params.type
   const genre = params.genre
@@ -70,7 +71,7 @@ const InputBox = ({params}) => {
         className="px-2 py-2 whitespace-nowrap cursor-pointer hover:bg-slate-600"
         onClick={() => {
           setSortDropdownOpen(false);
-          router.push(`/${type}/${genre}/${date}/1/1`);
+          router.push(`/${type}/${genre}/${country}/${date}/1/1`);
         }}
       >
         Most Popular
@@ -79,7 +80,7 @@ const InputBox = ({params}) => {
         className="px-2 py-2 whitespace-nowrap cursor-pointer hover:bg-slate-600"
         onClick={() => {
           setSortDropdownOpen(false);
-          router.push(`/${type}/${genre}/${date}/2/1`);
+          router.push(`/${type}/${genre}/${country}/${date}/2/1`);
         }}
       >
         Most Rated
@@ -88,7 +89,7 @@ const InputBox = ({params}) => {
         className="px-2 py-2 whitespace-nowrap cursor-pointer hover:bg-slate-600"
         onClick={() => {
           setSortDropdownOpen(false);
-          router.push(`/${type}/${genre}/${date}/3/1`);
+          router.push(`/${type}/${genre}/${country}/${date}/3/1`);
         }}
       >
         Most Recent
@@ -117,7 +118,7 @@ const InputBox = ({params}) => {
           className="px-2 py-2 whitespace-nowrap cursor-pointer hover:bg-slate-600"
           onClick={() => {
             setGenreDropdownOpen(false);
-            router.push(`/${type}/${item.id}/${date}/${sort}/1`);
+            router.push(`/${type}/${item.id}/${country}/${date}/${sort}/1`);
           }}
         >
           {item.name}
@@ -145,7 +146,7 @@ const InputBox = ({params}) => {
           className="px-2 py-2 whitespace-nowrap cursor-pointer hover:bg-slate-600"
           onClick={() => {
             setGenreDropdownOpen(false);
-            router.push(`/${type}/${item.id}/${date}/${sort}/1`);
+            router.push(`/${type}/${item.id}/${country}/${date}/${sort}/1`);
           }}
         >
           {item.name}

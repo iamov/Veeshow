@@ -84,7 +84,7 @@ const Stream = ({ id, type, season, eps }) => {
       Name: "SERVER",
       scrMovie: `https://player.vidplus.to/embed/movie/${id}??autoplay=false&poster=true&title=true&watchparty=false&chromecast=true&servericon=true&setting=true&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
       scrSeries: `https://player.vidplus.to/embed/tv/${id}/${season}/${eps}?autoplay=false&autonext=false&nextbutton=false&poster=true&title=true&watchparty=true&chromecast=true&episodelist=false&servericon=true&setting=false&pip=true&primarycolor=6C63FF&secondarycolor=9F9BFF&iconcolor=FFFFFF&font=Roboto&fontcolor=FFFFFF&fontsize=20&opacity=0.5`,
-      id: 3,
+      id: 0,
     },
     {
       Name: "SERVER 1",

@@ -72,15 +72,19 @@ const Logout = async () => {
             }}><FaUserCircle className='scale-[150%] mr-3'/><p className=' text-lg font-semibold'>Login</p></div>}</div>
             <h1 className=' md:hidden cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
                  state.showmenu = false
-                router.push(`/movie/28/${previousYear}/1/1`)
+                router.push(`/movie/28/US/${previousYear}/1/1`)
             }}><span className=' mr-2'><MdMovie/></span><p>Movies</p></h1>
             <h1 className=' md:hidden cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
                  state.showmenu = false
-                 router.push(`/tv/10759/${previousYear}/1/1`)
+                 router.push(`/tv/10759/US/${previousYear}/1/1`)
             }}><span className=' mr-2'><FaFilm/></span><p>Series</p></h1>
             <h1 className=' md:hidden cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
                  state.showmenu = false
-                router.push(`/tv/16/${previousYear}/1/1`)
+                 router.push(`/tv/10759/KR/${previousYear}/1/1`)
+            }}><span className=' mr-2'><FaFilm/></span><p>K-Drama</p></h1>
+            <h1 className=' md:hidden cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
+                 state.showmenu = false
+                router.push(`/tv/16/JP/${previousYear}/1/1`)
             }}><span className=' mr-2'><GiReactor/></span><p>Animes</p></h1>
              {/* <h1 className=' md:hidden cursor-pointer hover:scale-90 transition-all mb-4 duration-300 ease-in-out text-lg font-semibold flex items-center' onClick={()=>{
                  state.showmenu = false
