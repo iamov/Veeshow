@@ -39,7 +39,7 @@ const InputBox = ({params}) => {
           className="px-2 py-2 cursor-pointer hover:bg-slate-600"
           onClick={() => {
             setDropdownOpen(false);
-            router.push(`/${type}/${genre}/${year}/${sort}/1`);
+            router.push(`/${type}/${genre}/${country}/${year}/${sort}/1`);
           }}
         >
           {year}
