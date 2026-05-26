@@ -46,10 +46,10 @@ const Stream = ({ id, type, season, eps }) => {
   /* ================= DOWNLOAD ================= */
   const Download = () => {
     if (type === "movie") {
-      window.open(`https://dl.vidsrc.vip/movie/${id}`, "_blank");
+      window.open(`https://vidvault.ru/movie/${id}`, "_blank");
     } else {
       window.open(
-        `https://dl.vidsrc.vip/tv/${id}/${season}/${eps}`,
+        `https://vidvault.ru/tv/${id}/${season}/${eps}`,
         "_blank"
       );
     }
