@@ -43,7 +43,6 @@ export default function Home() {
     }
     catch(error)
     {
-      console.log(error)
       router.push('/not-found')
     }
     finally{

@@ -6,12 +6,10 @@ export default async function sitemap() {
   const api = new Apicore();
   const url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
   const url1 = "https://api.themoviedb.org/3/trending/tv/day?language=en-US";
-  const telenovelaUrl = "https://letstream.site/api/listseries?page=1";
 
   try {
     const res = await api.get(url);
     const sec = await api.get(url1);
-    const tel = await api.get(telenovelaUrl);
 
     if (!res?.results || !sec?.results || !tel?.series) throw new Error();
 
@@ -25,16 +23,12 @@ export default async function sitemap() {
       lastModified: new Date(pos.first_air_date || Date.now()).toISOString(),
     }));
 
-    const post3 = tel.series.map((pos) => ({
-      url: `https://letstream.site/telenovela/${pos._id}`,
-      lastModified: new Date(pos.updatedAt || Date.now()).toISOString(),
-    }));
+
 
     return [
       { url: "https://letstream.site", lastModified: new Date().toISOString(), priority: 1 },
       ...post,
-      ...post2,
-      ...post3,
+      ...post2
     ];
   } catch (error) {
     console.error("Error generating sitemap:", error);
