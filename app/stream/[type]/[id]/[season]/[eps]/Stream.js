@@ -50,10 +50,10 @@ const Stream = ({ id, type, season, eps }) => {
   const Download =()=>{
     if(type == 'movie'){
      
-      window.open(`https://dl.vidsrc.vip/movie/${id}`, '_blank');
+      window.open(`https://db.screenopps.com/db/movie/${id}`, '_blank');
     }
     else{
-       window.open(`https://dl.vidsrc.vip/tv/${id}/${season}/${eps}`, '_blank');
+       window.open(`https://db.screenopps.com/db/tv/${id}/${season}/${eps}`, '_blank');
     }
   }
   const GetSeason = async()=>{
