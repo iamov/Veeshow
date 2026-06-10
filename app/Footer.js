@@ -11,7 +11,7 @@ const Footer = () => {
             <div className=' hidden md:flex items-center cursor-pointer' onClick={()=>{
                                 router.push(`/`)}}>
                 <img src='/logologo.png' className=' w-16 mr-1'/>
-                <h1 className=' text-3xl font-bold'>Let's Stream</h1>
+                <h1 className=' text-3xl font-bold'>Screenopps</h1>
             </div>
             <div>
                 <h3 className=' font-semibold text-lg sm:text-2xl mb-2'>Socials</h3>

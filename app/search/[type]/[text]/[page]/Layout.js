@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'; // Adjust import if needed for your
 import { Formik, Form, Field } from 'formik';
 import Apicore from '../../../../ApiCore';
 import MovieBlock from '../../../../Pages/MovieBlock';
-import Pagination from '@/app/[type]/[genre]/[date]/[sort]/[page]/Component/Pagination';
+import Pagination from '@/app/[type]/[genre]/[country]/[date]/[sort]/[page]/Component/Pagination';
 import Button from '@/app/Component/Button';
 const Layout = ({type, texts, page}) => {
   const text = decodeURIComponent(texts)

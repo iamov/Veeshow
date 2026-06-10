@@ -13,6 +13,7 @@ const Category = ({params}) => {
   const api = new Apicore()
   const date = params.date
   const type = params.type
+  const country = params.country
   const page = params.page
   const sorts = params.sort
   const genre = params.genre
@@ -32,17 +33,17 @@ const Category = ({params}) => {
       sort = 'primary_release_date.asc'
     }
 
-    const response = await api.get(`/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=${sort}&${type == 'movie' ?'primary_release_date.gte':'first_air_date.gte'}=${date}-01-01&${type == 'movie' ?'primary_release_date.lte':'first_air_date.lte'}=${date}-12-31&with_genres=${genre}${genre != '16'&&'&with_origin_country=US'}&${(genre == '16' && type == 'tv')&&'with_origin_country=JP'}`)
+    const response = await api.get(`/3/discover/${type}?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=${sort}&${type == 'movie' ?'primary_release_date.gte':'first_air_date.gte'}=${date}-01-01&${type == 'movie' ?'primary_release_date.lte':'first_air_date.lte'}=${date}-12-31&with_genres=${genre}${genre != '16'&&`&with_origin_country=${country}`}&${(genre == '16' && type == 'tv')&&'with_origin_country=JP'}`)
     setData(response.results)
     setPages(response.total_pages)
   }
 
   const Right =()=>{
-    router.push(`/${type}/${genre}/${date}/${sorts}/${parseInt(page,10) + 1}`)
+    router.push(`/${type}/${genre}/${country}/${date}/${sorts}/${parseInt(page,10) + 1}`)
   }
 
   const Left = () =>{
-    router.push(`/${type}/${genre}/${date}/${sorts}/${parseInt(page,10) - 1}`)
+    router.push(`/${type}/${genre}/${country}/${date}/${sorts}/${parseInt(page,10) - 1}`)
 
   }
 

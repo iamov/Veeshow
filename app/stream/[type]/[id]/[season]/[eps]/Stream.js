@@ -99,6 +99,7 @@ const Stream = ({ id, type, season, eps }) => {
       Name: "SERVER 2",
       scrMovie: `https://vidnest.fun/movie/${id}`,
       scrSeries: `https://vidnest.fun/tv/${id}/${season}/${eps}`,
+
       id: 1,
     },
     {

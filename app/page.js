@@ -10,6 +10,7 @@ import Loading from "./Loading";
 import Navbar from "./Navbar";
 import Recent from "./Recent";
 import ReactGA from 'react-ga4'
+import Popup from "./Popup";
 
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
     try{
       setLoading(true)
       const response = await api.get('/3/trending/movie/day?language=en-US')
-      const kseries = await api.get(`/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=ko-KR&page=1&sort_by=popularity.desc&with_origin_country=KR&without_genres=10764,99,10767&first_air_date_year=${currentYear}`)
+      const kseries = await api.get(`/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=ko-KR&page=1&sort_by=popularity.desc&with_origin_country=KR&without_genres=10764,99,10767`)
       const series = await api.get('/3/trending/tv/day?language=en-US')
       const popular = await api.get('/3/discover/tv?include_adult=false&language=en-US&page=1&sort_by=vote_average.desc&vote_count.gte=200')
       const air = await api.get('/3/movie/top_rated?language=en-US&page=1')
@@ -59,6 +60,7 @@ if(loading)
 
   return (
     <div className="w-[100vw] relative  ">
+      <Popup words={"USE ADS-BLOCK FOR EASE OF USE"}/>
        <Navbar/>
      <Top BackgroundList={BackgroundList}/>
      <section className=" pb-5 md:pb-20 -mt-20 sm:-mt-32">

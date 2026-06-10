@@ -7,6 +7,7 @@ export default async function sitemap() {
   const url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
   const url1 = "https://api.themoviedb.org/3/trending/tv/day?language=en-US";
 
+
   try {
     const res = await api.get(url);
     const sec = await api.get(url1);

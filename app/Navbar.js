@@ -40,20 +40,23 @@ const Navbar = ({active}) => {
       router.push(`/`)
     }}>
               <img src='/logologo.png' className={` ${active? 'w-8 sm:w-12':' w-8 sm:w-10 md:w-16'} mr-2`}/>
-              <h2 className=' text-xl sm:text-2xl md:text-3xl font-extrabold '>Let's Stream</h2>
+              <h2 className=' text-xl sm:text-2xl md:text-3xl font-extrabold '>Screenopps</h2>
             </div>
-            <ul className=' md:flex w-[40%] hidden lg:w-[45%] xl:w-4/12 text-white justify-between font-bold items-center text-xl'>
+            <ul className=' md:flex w-[50%] hidden lg:w-[45%] xl:w-4/12 text-white justify-between font-bold items-center text-xl'>
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out' onClick={()=>{
       router.push(`/`)
     }}>Home</li>
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out' onClick={()=>{
-      router.push(`/movie/28/${previousYear}/1/1`)
+      router.push(`/movie/28/US/${previousYear}/1/1`)
     }}>Movies</li>
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out'  onClick={()=>{
-      router.push(`/tv/10759/${previousYear}/1/1`)
+      router.push(`/tv/10759/US/${previousYear}/1/1`)
     }}>Series</li>
+    <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out'  onClick={()=>{
+      router.push(`/tv/10759/KR/${previousYear}/1/1`)
+    }}>K-Drama</li>
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out'  onClick={()=>{
-      router.push(`/tv/16/${previousYear}/1/1`)
+      router.push(`/tv/16/JP/${previousYear}/1/1`)
     }}>Animes</li>
             </ul>
             <div className=' flex items-center text-2xl w-[22%] sm:w-[18%] md:w-[12%] lg:w-[10%] 2xl:w-[8%] 3xl:w-[7%] justify-between'>
