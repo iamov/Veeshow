@@ -11,15 +11,13 @@ const Footer = () => {
             <div className=' hidden md:flex items-center cursor-pointer' onClick={()=>{
                                 router.push(`/`)}}>
                 <img src='/logologo.png' className=' w-16 mr-1'/>
-                <h1 className=' text-3xl font-bold'>Screenopps</h1>
+                <h1 className=' text-3xl font-bold'>Veeshow</h1>
             </div>
             <div>
                 <h3 className=' font-semibold text-lg sm:text-2xl mb-2'>Socials</h3>
             </div>
             <div>
                 <h3 className=' font-semibold text-lg sm:text-2xl mb-2'>Resource</h3>
-                <p className=' font-medium sm:text-base text-sm cursor-pointer hover:font-semibold' onClick={()=>{
-                                router.push(`https://discord.gg/SdVZGGEw`)}}>Contact</p>
                 <p className=' font-medium sm:text-base text-sm cursor-pointer hover:font-semibold' >Donate</p>
             </div>
             </div>
