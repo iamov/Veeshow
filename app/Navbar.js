@@ -40,7 +40,7 @@ const Navbar = ({active}) => {
       router.push(`/`)
     }}>
               <img src='/logologo.png' className={` ${active? 'w-8 sm:w-12':' w-8 sm:w-10 md:w-16'} mr-2`}/>
-              <h2 className=' text-xl sm:text-2xl md:text-3xl font-extrabold '>Screenopps</h2>
+              <h2 className=' text-xl sm:text-2xl md:text-3xl font-extrabold '>Veeshow</h2>
             </div>
             <ul className=' md:flex w-[50%] hidden lg:w-[45%] xl:w-4/12 text-white justify-between font-bold items-center text-xl'>
               <li className=' cursor-pointer hover:scale-[90%] transition-all duration-300 ease-in-out' onClick={()=>{
