@@ -108,15 +108,8 @@ const Stream = ({ id, type, season, eps }) => {
       scrSeries: `https://vidlink.pro/tv/${id}/${season}/${eps}`,
       id: 9,
     },
-
     {
       Name: "SERVER 4",
-      scrMovie: `https://player.autoembed.cc/embed/movie/${id}?server=6`,
-      scrSeries: `https://player.autoembed.cc/embed/tv/${id}/${season}/${eps}?server=6`,
-      id: 6,
-    },
-    {
-      Name: "SERVER 6",
       scrMovie: `https://111movies.com/movie/${id}`,
       scrSeries: `https://111movies.com/tv/${id}/${season}/${eps}`,
       id: 8,
