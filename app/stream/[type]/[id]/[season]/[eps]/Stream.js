@@ -98,9 +98,6 @@ const Stream = ({ id, type, season, eps }) => {
     GET();
     if (type === "tv") GetSeason();
     else setEpisodeLoading(false);
-
-    const savedApi = localStorage.getItem("selectedApi");
-    if (savedApi) setSelectedApi(savedApi);
   }, []);
 
   useEffect(() => {
