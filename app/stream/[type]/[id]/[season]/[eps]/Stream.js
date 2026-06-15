@@ -11,7 +11,7 @@ const Stream = ({ id, type, season, eps }) => {
   const api = new Apicore();
   const router = useRouter();
 
-  const [selectedApi, setSelectedApi] = useState("SERVER 1");
+  const [selectedApi, setSelectedApi] = useState("SERVER");
   const [arr, setArry] = useState([]);
   const [name, setName] = useState();
   const [episodeLoading, setEpisodeLoading] = useState(true);
@@ -80,7 +80,7 @@ const Stream = ({ id, type, season, eps }) => {
   /* ================= STREAM SERVERS ================= */
   const StreamApi = [
      {
-      Name: "SERVER 1",
+      Name: "SERVER",
       scrMovie: `https://api.screenopps.com/embed/movie/${id}`,
       scrSeries: `https://api.screenopps.com/embed/tv/${id}/${season}/${eps}`,
       id: 0,
